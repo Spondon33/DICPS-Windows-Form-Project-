@@ -53,10 +53,11 @@ namespace DICPS
             dob = Convert.ToDateTime(dateTimePicker1.Text);
             username = txtUsername.Text;
             password = txtPass.Text;
+            badge = txtBadge.Text;
 
             SqlConnection conn = new SqlConnection(@"Server=WIN-POR2474TN8O\SQLEXPRESS;Database=DICPS;Trusted_Connection=True;TrustServerCertificate=True;");
             conn.Open();
-            string query = "Insert into StaffInfo (Role, Name, DOB, Username, Password) values ('" + role + "', '" + name + "', '" + dob.ToString("yyyy-MM-dd") + "', '" + username + "', '" + password + "')";
+            string query = "Insert into StaffInfo (Role, Name, DOB, Username, Password, Badge) values ('" + role + "', '" + name + "', '" + dob.ToString("yyyy-MM-dd") + "', '" + username + "', '" + password + "', '" + badge + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
         }
