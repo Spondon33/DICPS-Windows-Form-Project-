@@ -102,14 +102,14 @@ namespace DICPS.Forms.Shared
             txtUsername.Clear();
             txtPass.Clear();
             txtBadge.Clear();
-            dateTimePicker1.Value = DateTime.Now;   // resets to today's date
+            dateTimePicker1.Value = DateTime.Now;   
 
             rbDetective.Checked = false;
             rbCaseRecordOfficer.Checked = false;
             rbForensicOfficer.Checked = false;
             rbChiefInvestigator.Checked = false;
 
-            cmbRank.SelectedIndex = -1;   // clears dropdown selection
+            cmbRank.SelectedIndex = -1;
             lblRank.Visible = false;
             cmbRank.Visible = false;
         }
