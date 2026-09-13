@@ -1,4 +1,4 @@
-﻿namespace DICPS
+﻿namespace DICPS.Forms.Shared
 {
     partial class LoginForm
     {
