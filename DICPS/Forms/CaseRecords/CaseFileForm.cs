@@ -16,5 +16,10 @@ namespace DICPS.Forms.CaseRecords
         {
             InitializeComponent();
         }
+
+        private void lblCreatCase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
