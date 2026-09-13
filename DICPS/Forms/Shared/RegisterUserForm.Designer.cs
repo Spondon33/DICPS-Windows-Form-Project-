@@ -1,4 +1,4 @@
-﻿namespace DICPS
+﻿namespace DICPS.Forms.Shared
 {
     partial class RegisterUserForm
     {
@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblDICPS = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.rbDetective = new System.Windows.Forms.RadioButton();
             this.rbCaseRecordOfficer = new System.Windows.Forms.RadioButton();
@@ -39,16 +38,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtBadge = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.lblRank = new System.Windows.Forms.Label();
+            this.cmbRank = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -72,19 +71,11 @@
             this.lblDICPS.Text = "DICPS Registration";
             this.lblDICPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 280);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 25);
-            this.label2.TabIndex = 2;
-            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(76, 200);
+            this.lblUser.Location = new System.Drawing.Point(84, 478);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(86, 32);
             this.lblUser.TabIndex = 4;
@@ -95,7 +86,7 @@
             // 
             this.rbDetective.AutoSize = true;
             this.rbDetective.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDetective.Location = new System.Drawing.Point(187, 202);
+            this.rbDetective.Location = new System.Drawing.Point(195, 480);
             this.rbDetective.Name = "rbDetective";
             this.rbDetective.Size = new System.Drawing.Size(132, 33);
             this.rbDetective.TabIndex = 5;
@@ -103,12 +94,13 @@
             this.rbDetective.Text = "Detective";
             this.rbDetective.UseCompatibleTextRendering = true;
             this.rbDetective.UseVisualStyleBackColor = true;
+            this.rbDetective.CheckedChanged += new System.EventHandler(this.rbDetective_CheckedChanged);
             // 
             // rbCaseRecordOfficer
             // 
             this.rbCaseRecordOfficer.AutoSize = true;
             this.rbCaseRecordOfficer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCaseRecordOfficer.Location = new System.Drawing.Point(450, 202);
+            this.rbCaseRecordOfficer.Location = new System.Drawing.Point(458, 480);
             this.rbCaseRecordOfficer.Name = "rbCaseRecordOfficer";
             this.rbCaseRecordOfficer.Size = new System.Drawing.Size(247, 33);
             this.rbCaseRecordOfficer.TabIndex = 6;
@@ -116,12 +108,13 @@
             this.rbCaseRecordOfficer.Text = "Case Record Officer";
             this.rbCaseRecordOfficer.UseCompatibleTextRendering = true;
             this.rbCaseRecordOfficer.UseVisualStyleBackColor = true;
+            this.rbCaseRecordOfficer.CheckedChanged += new System.EventHandler(this.rbCaseRecordOfficer_CheckedChanged);
             // 
             // rbForensicOfficer
             // 
             this.rbForensicOfficer.AutoSize = true;
             this.rbForensicOfficer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbForensicOfficer.Location = new System.Drawing.Point(187, 244);
+            this.rbForensicOfficer.Location = new System.Drawing.Point(195, 522);
             this.rbForensicOfficer.Name = "rbForensicOfficer";
             this.rbForensicOfficer.Size = new System.Drawing.Size(200, 33);
             this.rbForensicOfficer.TabIndex = 7;
@@ -129,12 +122,13 @@
             this.rbForensicOfficer.Text = "Forensic Officer";
             this.rbForensicOfficer.UseCompatibleTextRendering = true;
             this.rbForensicOfficer.UseVisualStyleBackColor = true;
+            this.rbForensicOfficer.CheckedChanged += new System.EventHandler(this.rbForensicOfficer_CheckedChanged);
             // 
             // rbChiefInvestigator
             // 
             this.rbChiefInvestigator.AutoSize = true;
             this.rbChiefInvestigator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbChiefInvestigator.Location = new System.Drawing.Point(450, 244);
+            this.rbChiefInvestigator.Location = new System.Drawing.Point(458, 522);
             this.rbChiefInvestigator.Name = "rbChiefInvestigator";
             this.rbChiefInvestigator.Size = new System.Drawing.Size(217, 33);
             this.rbChiefInvestigator.TabIndex = 8;
@@ -142,12 +136,13 @@
             this.rbChiefInvestigator.Text = "Chief Investigator";
             this.rbChiefInvestigator.UseCompatibleTextRendering = true;
             this.rbChiefInvestigator.UseVisualStyleBackColor = true;
+            this.rbChiefInvestigator.CheckedChanged += new System.EventHandler(this.rbChiefInvestigator_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(76, 321);
+            this.label3.Location = new System.Drawing.Point(76, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 32);
             this.label3.TabIndex = 9;
@@ -159,7 +154,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(76, 387);
+            this.label4.Location = new System.Drawing.Point(76, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 32);
             this.label4.TabIndex = 10;
@@ -170,26 +165,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(76, 576);
+            this.label5.Location = new System.Drawing.Point(76, 596);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "Badge:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(76, 640);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 32);
-            this.label6.TabIndex = 12;
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(253, 323);
+            this.txtName.Location = new System.Drawing.Point(253, 194);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(397, 29);
             this.txtName.TabIndex = 13;
@@ -198,7 +183,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(76, 516);
+            this.label7.Location = new System.Drawing.Point(76, 399);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 32);
             this.label7.TabIndex = 15;
@@ -209,47 +194,37 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(76, 452);
+            this.label8.Location = new System.Drawing.Point(76, 330);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 32);
             this.label8.TabIndex = 14;
             this.label8.Text = "Username:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(361, 482);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 32);
-            this.label9.TabIndex = 16;
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(253, 455);
+            this.txtUsername.Location = new System.Drawing.Point(253, 333);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(397, 29);
             this.txtUsername.TabIndex = 18;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(253, 519);
+            this.txtPass.Location = new System.Drawing.Point(253, 402);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(397, 29);
             this.txtPass.TabIndex = 19;
             // 
             // txtBadge
             // 
-            this.txtBadge.Location = new System.Drawing.Point(253, 579);
+            this.txtBadge.Location = new System.Drawing.Point(253, 599);
             this.txtBadge.Name = "txtBadge";
             this.txtBadge.Size = new System.Drawing.Size(397, 29);
             this.txtBadge.TabIndex = 20;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(253, 389);
+            this.dateTimePicker1.Location = new System.Drawing.Point(253, 265);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(240, 29);
             this.dateTimePicker1.TabIndex = 21;
@@ -261,7 +236,7 @@
             this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(304, 732);
+            this.btnRegister.Location = new System.Drawing.Point(304, 774);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(189, 69);
             this.btnRegister.TabIndex = 22;
@@ -269,21 +244,47 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // registerForm
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRank.Location = new System.Drawing.Point(76, 670);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(93, 32);
+            this.lblRank.TabIndex = 27;
+            this.lblRank.Text = "Rank:";
+            this.lblRank.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblRank.Visible = false;
+            // 
+            // cmbRank
+            // 
+            this.cmbRank.FormattingEnabled = true;
+            this.cmbRank.Items.AddRange(new object[] {
+            "Trainee",
+            "Junior Detective",
+            "Senior Detective",
+            "Detective Sergeant"});
+            this.cmbRank.Location = new System.Drawing.Point(253, 670);
+            this.cmbRank.Name = "cmbRank";
+            this.cmbRank.Size = new System.Drawing.Size(397, 32);
+            this.cmbRank.TabIndex = 28;
+            this.cmbRank.Visible = false;
+            // 
+            // RegisterUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 997);
+            this.ClientSize = new System.Drawing.Size(815, 929);
+            this.Controls.Add(this.cmbRank);
+            this.Controls.Add(this.lblRank);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtBadge);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -292,10 +293,9 @@
             this.Controls.Add(this.rbCaseRecordOfficer);
             this.Controls.Add(this.rbDetective);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDICPS);
             this.Controls.Add(this.label1);
-            this.Name = "registerForm";
+            this.Name = "RegisterUserForm";
             this.Text = "registerForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,7 +306,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDICPS;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.RadioButton rbDetective;
         private System.Windows.Forms.RadioButton rbCaseRecordOfficer;
@@ -315,15 +314,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtBadge;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label lblRank;
+        private System.Windows.Forms.ComboBox cmbRank;
     }
 }
