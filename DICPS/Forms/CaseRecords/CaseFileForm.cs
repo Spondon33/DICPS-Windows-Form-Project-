@@ -21,5 +21,10 @@ namespace DICPS.Forms.CaseRecords
         {
 
         }
+
+        private void lblincidentdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
