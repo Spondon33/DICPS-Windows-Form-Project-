@@ -194,6 +194,9 @@
     <Compile Include="Forms\Shared\RegisterUserForm.Designer.cs">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Detective\CaseLoadForm.resx">
+      <DependentUpon>CaseLoadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detective\DetectiveDashboardForm.resx">
       <DependentUpon>DetectiveDashboardForm.cs</DependentUpon>
     </EmbeddedResource>

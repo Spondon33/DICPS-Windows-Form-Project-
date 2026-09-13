@@ -21,5 +21,15 @@ namespace DICPS.Forms.Detective
         {
 
         }
+
+        private void lblpname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtpname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

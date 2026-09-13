@@ -44,7 +44,7 @@ namespace DICPS.Forms.Detective
 
         private void btncaseload_Click(object sender, EventArgs e)
         {
-            CaseLoadForm caseloadForm = new CaseLoadForm();
+            btncaseloadform caseloadForm = new btncaseloadform();
             caseloadForm.Show();
         }
 

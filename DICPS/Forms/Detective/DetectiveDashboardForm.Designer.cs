@@ -41,7 +41,7 @@
             this.lblDICPS.AutoSize = true;
             this.lblDICPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDICPS.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblDICPS.Location = new System.Drawing.Point(446, 9);
+            this.lblDICPS.Location = new System.Drawing.Point(351, 9);
             this.lblDICPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDICPS.Name = "lblDICPS";
             this.lblDICPS.Size = new System.Drawing.Size(433, 72);
@@ -52,9 +52,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(593, 97);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(493, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 16);
+            this.label1.Size = new System.Drawing.Size(188, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Detective Dashboard";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -62,16 +63,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(593, 128);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(493, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 16);
+            this.label2.Size = new System.Drawing.Size(181, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Welcome, Detective";
             // 
             // btncaseload
             // 
             this.btncaseload.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncaseload.Location = new System.Drawing.Point(328, 200);
+            this.btncaseload.Location = new System.Drawing.Point(60, 271);
             this.btncaseload.Name = "btncaseload";
             this.btncaseload.Size = new System.Drawing.Size(217, 94);
             this.btncaseload.TabIndex = 4;
@@ -82,7 +84,7 @@
             // btnsperson
             // 
             this.btnsperson.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsperson.Location = new System.Drawing.Point(328, 347);
+            this.btnsperson.Location = new System.Drawing.Point(430, 273);
             this.btnsperson.Name = "btnsperson";
             this.btnsperson.Size = new System.Drawing.Size(217, 92);
             this.btnsperson.TabIndex = 7;
@@ -93,7 +95,7 @@
             // btnrgperson
             // 
             this.btnrgperson.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrgperson.Location = new System.Drawing.Point(328, 498);
+            this.btnrgperson.Location = new System.Drawing.Point(810, 274);
             this.btnrgperson.Name = "btnrgperson";
             this.btnrgperson.Size = new System.Drawing.Size(217, 91);
             this.btnrgperson.TabIndex = 8;
