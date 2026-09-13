@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblDICPS = new System.Windows.Forms.Label();
-            this.btnlogin = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblpass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDICPS
@@ -49,21 +49,6 @@
             this.lblDICPS.Text = "Detective Investigation \r\nand Criminal Profiling System";
             this.lblDICPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDICPS.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnlogin
-            // 
-            this.btnlogin.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnlogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.Location = new System.Drawing.Point(322, 424);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(189, 69);
-            this.btnlogin.TabIndex = 1;
-            this.btnlogin.Text = "Login";
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblUser
             // 
@@ -118,19 +103,34 @@
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // loginForm
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(321, 439);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(189, 69);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 1002);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblpass);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.lblDICPS);
-            this.Name = "loginForm";
+            this.Name = "LoginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,12 +140,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblDICPS;
-        private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblpass;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

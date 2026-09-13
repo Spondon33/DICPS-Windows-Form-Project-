@@ -58,6 +58,12 @@
     <Compile Include="Forms\CaseRecords\CaseFileForm.Designer.cs">
       <DependentUpon>CaseFileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CaseRecords\CaseRecordsDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseRecords\CaseRecordsDashboardForm.Designer.cs">
+      <DependentUpon>CaseRecordsDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CaseRecords\CaseSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="Forms\CaseRecords\ColdCaseForm.Designer.cs">
       <DependentUpon>ColdCaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.Designer.cs">
+      <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChiefInvestigator\DashboardForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +106,12 @@
     <Compile Include="Forms\Detective\CaseLoadForm.Designer.cs">
       <DependentUpon>CaseLoadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Detective\DetectiveDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detective\DetectiveDashboardForm.Designer.cs">
+      <DependentUpon>DetectiveDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Detective\PersonSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +135,12 @@
     </Compile>
     <Compile Include="Forms\Evidence\ChainOfCustodyForm.Designer.cs">
       <DependentUpon>ChainOfCustodyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceDashboardForm.Designer.cs">
+      <DependentUpon>EvidenceDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Evidence\EvidenceReportForm.cs">
       <SubType>Form</SubType>
@@ -155,6 +179,9 @@
     <Compile Include="Forms\Shared\RegisterUserForm.Designer.cs">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.resx">
+      <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Shared\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
