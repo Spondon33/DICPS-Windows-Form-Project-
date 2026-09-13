@@ -45,6 +45,8 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblUserID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnProfilingReports = new System.Windows.Forms.Button();
+            this.btnDatabaseAdmin = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCases)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +77,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblColdCases, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOpenCases, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTotalCases, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 163);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 205);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -180,10 +182,11 @@
             // dgvAllCases
             // 
             this.dgvAllCases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllCases.Location = new System.Drawing.Point(35, 425);
+            this.dgvAllCases.Location = new System.Drawing.Point(35, 467);
             this.dgvAllCases.Name = "dgvAllCases";
             this.dgvAllCases.RowHeadersWidth = 72;
             this.dgvAllCases.RowTemplate.Height = 31;
+            this.dgvAllCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllCases.Size = new System.Drawing.Size(780, 369);
             this.dgvAllCases.TabIndex = 3;
             // 
@@ -194,7 +197,7 @@
             this.btnRefreshDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnRefreshDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshDashboard.Location = new System.Drawing.Point(77, 832);
+            this.btnRefreshDashboard.Location = new System.Drawing.Point(77, 874);
             this.btnRefreshDashboard.Name = "btnRefreshDashboard";
             this.btnRefreshDashboard.Size = new System.Drawing.Size(220, 74);
             this.btnRefreshDashboard.TabIndex = 9;
@@ -209,7 +212,7 @@
             this.buttonReassignDetective.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonReassignDetective.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReassignDetective.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReassignDetective.Location = new System.Drawing.Point(388, 832);
+            this.buttonReassignDetective.Location = new System.Drawing.Point(388, 874);
             this.buttonReassignDetective.Name = "buttonReassignDetective";
             this.buttonReassignDetective.Size = new System.Drawing.Size(369, 74);
             this.buttonReassignDetective.TabIndex = 10;
@@ -224,7 +227,7 @@
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(723, 17);
+            this.btnLogout.Location = new System.Drawing.Point(1082, 18);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(125, 62);
             this.btnLogout.TabIndex = 11;
@@ -250,11 +253,43 @@
             this.lblName.TabIndex = 13;
             this.lblName.Text = "Name:";
             // 
+            // btnProfilingReports
+            // 
+            this.btnProfilingReports.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnProfilingReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnProfilingReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnProfilingReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfilingReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfilingReports.Location = new System.Drawing.Point(902, 363);
+            this.btnProfilingReports.Name = "btnProfilingReports";
+            this.btnProfilingReports.Size = new System.Drawing.Size(220, 95);
+            this.btnProfilingReports.TabIndex = 14;
+            this.btnProfilingReports.Text = "Profiling\r\nReports";
+            this.btnProfilingReports.UseVisualStyleBackColor = false;
+            this.btnProfilingReports.Click += new System.EventHandler(this.btnProfilingReports_Click);
+            // 
+            // btnDatabaseAdmin
+            // 
+            this.btnDatabaseAdmin.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDatabaseAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDatabaseAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDatabaseAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatabaseAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatabaseAdmin.Location = new System.Drawing.Point(902, 581);
+            this.btnDatabaseAdmin.Name = "btnDatabaseAdmin";
+            this.btnDatabaseAdmin.Size = new System.Drawing.Size(220, 95);
+            this.btnDatabaseAdmin.TabIndex = 15;
+            this.btnDatabaseAdmin.Text = "Database\r\nAdmin";
+            this.btnDatabaseAdmin.UseVisualStyleBackColor = false;
+            this.btnDatabaseAdmin.Click += new System.EventHandler(this.btnDatabaseAdmin_Click);
+            // 
             // ChiefInvestigatorDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 952);
+            this.ClientSize = new System.Drawing.Size(1229, 1073);
+            this.Controls.Add(this.btnDatabaseAdmin);
+            this.Controls.Add(this.btnProfilingReports);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.btnLogout);
@@ -293,5 +328,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnProfilingReports;
+        private System.Windows.Forms.Button btnDatabaseAdmin;
     }
 }

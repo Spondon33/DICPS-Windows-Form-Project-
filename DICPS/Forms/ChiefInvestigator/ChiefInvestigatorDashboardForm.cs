@@ -98,5 +98,17 @@ namespace DICPS.Forms.ChiefInvestigator
         {
 
         }
+
+        private void btnProfilingReports_Click(object sender, EventArgs e)
+        {
+            ProfilingReportForm form = new ProfilingReportForm(loggedInUser);
+            form.Show();
+        }
+
+        private void btnDatabaseAdmin_Click(object sender, EventArgs e)
+        {
+            DatabaseAdminForm form = new DatabaseAdminForm();
+            form.Show();
+        }
     }
 }
