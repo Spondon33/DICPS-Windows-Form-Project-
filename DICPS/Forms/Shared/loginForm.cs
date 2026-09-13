@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DICPS
 {
-    public partial class loginForm : Form
+    public partial class LoginForm : Form
     {
-        public loginForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -39,8 +39,8 @@ namespace DICPS
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            registerForm register = new registerForm();
-            register.Show();
+            RegisterUserForm registerUser = new RegisterUserForm();
+            registerUser.Show();
             this.Hide();
         }
     }

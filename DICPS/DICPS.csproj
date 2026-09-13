@@ -49,22 +49,114 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="loginForm.cs">
+    <Compile Include="Common\DatabaseManager.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\StaffUser.cs" />
+    <Compile Include="Forms\CaseRecords\CaseFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginForm.Designer.cs">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <Compile Include="Forms\CaseRecords\CaseFileForm.Designer.cs">
+      <DependentUpon>CaseFileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CaseRecords\CaseSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseRecords\CaseSearchForm.Designer.cs">
+      <DependentUpon>CaseSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CaseRecords\ColdCaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseRecords\ColdCaseForm.Designer.cs">
+      <DependentUpon>ColdCaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\DatabaseAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\DatabaseAdminForm.Designer.cs">
+      <DependentUpon>DatabaseAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ProfilingReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ProfilingReportForm.Designer.cs">
+      <DependentUpon>ProfilingReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Detective\CaseLoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detective\CaseLoadForm.Designer.cs">
+      <DependentUpon>CaseLoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Detective\PersonSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detective\PersonSearchForm.Designer.cs">
+      <DependentUpon>PersonSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Detective\RegisterPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detective\RegisterPersonForm.Designer.cs">
+      <DependentUpon>RegisterPersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidence\AddEvidenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidence\AddEvidenceForm.Designer.cs">
+      <DependentUpon>AddEvidenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidence\ChainOfCustodyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidence\ChainOfCustodyForm.Designer.cs">
+      <DependentUpon>ChainOfCustodyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceReportForm.Designer.cs">
+      <DependentUpon>EvidenceReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shared\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shared\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CaseRecords\CaseRecord.cs" />
+    <Compile Include="Models\CaseRecords\CaseSuspectLink.cs" />
+    <Compile Include="Models\CaseRecords\ColdCase.cs" />
+    <Compile Include="Models\CaseRecords\CriminalCase.cs" />
+    <Compile Include="Models\CaseRecords\WitnessCaseLink.cs" />
+    <Compile Include="Models\ChiefInvestigator\ProfilingEngine.cs" />
+    <Compile Include="Models\ChiefInvestigator\ProfilingReport.cs" />
+    <Compile Include="Models\Detective\CaseNote.cs" />
+    <Compile Include="Models\Detective\Detective.cs" />
+    <Compile Include="Models\Detective\Person.cs" />
+    <Compile Include="Models\Detective\Suspect.cs" />
+    <Compile Include="Models\Detective\Witness.cs" />
+    <Compile Include="Models\Evidence\CustodyLog.cs" />
+    <Compile Include="Models\Evidence\DigitalEvidence.cs" />
+    <Compile Include="Models\Evidence\Evidence.cs" />
+    <Compile Include="Models\Evidence\PhysicalEvidence.cs" />
+    <Compile Include="Models\Evidence\Validator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="registerForm.cs">
+    <Compile Include="Forms\Shared\RegisterUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="registerForm.Designer.cs">
-      <DependentUpon>registerForm.cs</DependentUpon>
+    <Compile Include="Forms\Shared\RegisterUserForm.Designer.cs">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="loginForm.resx">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Shared\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,8 +167,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="registerForm.resx">
-      <DependentUpon>registerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Shared\RegisterUserForm.resx">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,5 +183,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

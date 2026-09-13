@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace DICPS
 {
-    public partial class registerForm : Form
+    public partial class RegisterUserForm : Form
     {
         string role, name, username, password, badge;
         DateTime dob;
-        public registerForm()
+        public RegisterUserForm()
         {
             InitializeComponent();
         }

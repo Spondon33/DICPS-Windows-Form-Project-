@@ -1,6 +1,6 @@
 ﻿namespace DICPS
 {
-    partial class registerForm
+    partial class RegisterUserForm
     {
         /// <summary>
         /// Required designer variable.
