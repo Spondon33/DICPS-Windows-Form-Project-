@@ -16,5 +16,53 @@ namespace DICPS.Forms.Detective
         {
             InitializeComponent();
         }
+
+        private void DetectiveDashboardForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncaseload_Click(object sender, EventArgs e)
+        {
+            CaseLoadForm caseloadForm = new CaseLoadForm();
+            caseloadForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsperson_Click(object sender, EventArgs e)
+        {
+            PersonSearchForm personForm = new PersonSearchForm();
+            personForm.Show();
+        }
+
+        private void btnrgperson_Click(object sender, EventArgs e)
+        {
+            RegisterPersonForm registerPersonForm = new RegisterPersonForm();
+            registerPersonForm.Show();
+        }
     }
 }

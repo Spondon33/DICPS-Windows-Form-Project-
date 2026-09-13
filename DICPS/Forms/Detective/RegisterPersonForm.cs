@@ -16,5 +16,10 @@ namespace DICPS.Forms.Detective
         {
             InitializeComponent();
         }
+
+        private void RegisterPersonForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

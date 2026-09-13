@@ -13,6 +13,21 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PreferNativeArm64>true</PreferNativeArm64>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,6 +73,12 @@
     <Compile Include="Forms\CaseRecords\CaseFileForm.Designer.cs">
       <DependentUpon>CaseFileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CaseRecords\CaseRecordsDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseRecords\CaseRecordsDashboardForm.Designer.cs">
+      <DependentUpon>CaseRecordsDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CaseRecords\CaseSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +90,12 @@
     </Compile>
     <Compile Include="Forms\CaseRecords\ColdCaseForm.Designer.cs">
       <DependentUpon>ColdCaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.Designer.cs">
+      <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChiefInvestigator\DashboardForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +121,12 @@
     <Compile Include="Forms\Detective\CaseLoadForm.Designer.cs">
       <DependentUpon>CaseLoadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Detective\DetectiveDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detective\DetectiveDashboardForm.Designer.cs">
+      <DependentUpon>DetectiveDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Detective\PersonSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +150,12 @@
     </Compile>
     <Compile Include="Forms\Evidence\ChainOfCustodyForm.Designer.cs">
       <DependentUpon>ChainOfCustodyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidence\EvidenceDashboardForm.Designer.cs">
+      <DependentUpon>EvidenceDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Evidence\EvidenceReportForm.cs">
       <SubType>Form</SubType>
@@ -155,6 +194,15 @@
     <Compile Include="Forms\Shared\RegisterUserForm.Designer.cs">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Detective\DetectiveDashboardForm.resx">
+      <DependentUpon>DetectiveDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Detective\PersonSearchForm.resx">
+      <DependentUpon>PersonSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Detective\RegisterPersonForm.resx">
+      <DependentUpon>RegisterPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Shared\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +231,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

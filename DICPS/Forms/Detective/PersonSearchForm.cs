@@ -16,5 +16,10 @@ namespace DICPS.Forms.Detective
         {
             InitializeComponent();
         }
+
+        private void PersonSearchForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

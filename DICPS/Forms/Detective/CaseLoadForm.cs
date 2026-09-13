@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace DICPS.Forms.Detective
 {
-    public partial class CaseLoadForm : Form
+    public partial class btncaseloadform : Form
     {
-        public CaseLoadForm()
+        public btncaseloadform()
         {
             InitializeComponent();
+        }
+
+        private void btncaseload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncasenote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncaseload_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
