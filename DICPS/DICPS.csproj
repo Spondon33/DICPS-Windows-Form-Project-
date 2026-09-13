@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -159,6 +160,7 @@
     <Compile Include="Models\CaseRecords\ColdCase.cs" />
     <Compile Include="Models\CaseRecords\CriminalCase.cs" />
     <Compile Include="Models\CaseRecords\WitnessCaseLink.cs" />
+    <Compile Include="Models\ChiefInvestigator\DashboardData.cs" />
     <Compile Include="Models\ChiefInvestigator\ProfilingEngine.cs" />
     <Compile Include="Models\ChiefInvestigator\ProfilingReport.cs" />
     <Compile Include="Models\Detective\CaseNote.cs" />
