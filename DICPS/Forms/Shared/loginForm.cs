@@ -69,7 +69,7 @@ namespace DICPS.Forms.Shared
                         evidenceDashboard.Show();
                         break;
                     case "Chief Investigator":
-                        ChiefInvestigatorDashboardForm chiefInvestigatorDashboard = new ChiefInvestigatorDashboardForm();
+                        ChiefInvestigatorDashboardForm chiefInvestigatorDashboard = new ChiefInvestigatorDashboardForm(currentUser);
                         chiefInvestigatorDashboard.Show();
                         break;
                 }

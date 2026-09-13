@@ -1,4 +1,5 @@
-﻿using DICPS.Forms.Shared;
+﻿using DICPS.Common;
+using DICPS.Forms.Shared;
 using DICPS.Models.ChiefInvestigator;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,13 +17,17 @@ namespace DICPS.Forms.ChiefInvestigator
     public partial class ChiefInvestigatorDashboardForm : Form
     {
         private DashboardData dashboardData = new DashboardData();
-        public ChiefInvestigatorDashboardForm()
+        private StaffUser loggedInUser = new StaffUser();
+        public ChiefInvestigatorDashboardForm(StaffUser user)
         {
             InitializeComponent();
+            loggedInUser = user;
         }
 
         private void ChiefInvestigatorDashboardForm_Load(object sender, EventArgs e)
         {
+            lblUserID.Text = "User ID: " + loggedInUser.UserId;
+            lblName.Text = "Name: " + loggedInUser.Name;
             LoadDashboard();
         }
         private void LoadDashboard()
@@ -76,6 +82,21 @@ namespace DICPS.Forms.ChiefInvestigator
             LoginForm login = new LoginForm();
             login.Show();
             this.Close();
+        }
+
+        private void lblClosedCases_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalProfilingReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

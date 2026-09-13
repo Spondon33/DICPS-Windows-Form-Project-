@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using DICPS.Common;
 
 namespace DICPS.Common
 {
-    internal class StaffUser
+    public class StaffUser
     {
         public int UserId { get; set; }
         public string Name { get; set; }
