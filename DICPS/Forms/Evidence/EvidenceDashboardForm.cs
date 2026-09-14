@@ -16,5 +16,17 @@ namespace DICPS.Forms.Evidence
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddEvidenceForm addEvidence = new AddEvidenceForm();
+            addEvidence.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChainOfCustodyForm chainForm = new ChainOfCustodyForm();
+            chainForm.Show();
+        }
     }
 }
