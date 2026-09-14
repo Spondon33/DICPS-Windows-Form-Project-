@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 1135);
+            this.ClientSize = new System.Drawing.Size(1000, 1135);
             this.Controls.Add(this.btnEvidenceReport);
             this.Controls.Add(this.btnChainOfCustody);
             this.Controls.Add(this.btnDeleteEvidence);
@@ -276,7 +276,7 @@
             this.Controls.Add(this.lblLoggedInUserID);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lblEvidenceDashboard);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EvidenceDashboardForm";
             this.Text = "EvidenceDashboardForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvidence)).EndInit();
