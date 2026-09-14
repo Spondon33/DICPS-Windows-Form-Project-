@@ -16,5 +16,10 @@ namespace DICPS.Forms.Evidence
         {
             InitializeComponent();
         }
+
+        private void lblDICPS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

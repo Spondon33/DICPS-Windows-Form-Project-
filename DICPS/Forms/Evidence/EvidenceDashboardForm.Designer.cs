@@ -39,7 +39,7 @@
             this.lblDICPS.AutoSize = true;
             this.lblDICPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDICPS.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblDICPS.Location = new System.Drawing.Point(166, 49);
+            this.lblDICPS.Location = new System.Drawing.Point(167, 55);
             this.lblDICPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDICPS.Name = "lblDICPS";
             this.lblDICPS.Size = new System.Drawing.Size(433, 72);
