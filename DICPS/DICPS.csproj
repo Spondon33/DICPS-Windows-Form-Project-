@@ -185,6 +185,12 @@
     <EmbeddedResource Include="Forms\CaseRecords\CaseRecordsDashboardForm.resx">
       <DependentUpon>CaseRecordsDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseRecords\CaseSearchForm.resx">
+      <DependentUpon>CaseSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseRecords\ColdCaseForm.resx">
+      <DependentUpon>ColdCaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Shared\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
