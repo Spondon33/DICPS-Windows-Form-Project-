@@ -46,7 +46,6 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnProfilingReports = new System.Windows.Forms.Button();
-            this.btnDatabaseAdmin = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCases)).BeginInit();
             this.SuspendLayout();
@@ -268,27 +267,11 @@
             this.btnProfilingReports.UseVisualStyleBackColor = false;
             this.btnProfilingReports.Click += new System.EventHandler(this.btnProfilingReports_Click);
             // 
-            // btnDatabaseAdmin
-            // 
-            this.btnDatabaseAdmin.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDatabaseAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDatabaseAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDatabaseAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatabaseAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatabaseAdmin.Location = new System.Drawing.Point(902, 581);
-            this.btnDatabaseAdmin.Name = "btnDatabaseAdmin";
-            this.btnDatabaseAdmin.Size = new System.Drawing.Size(220, 95);
-            this.btnDatabaseAdmin.TabIndex = 15;
-            this.btnDatabaseAdmin.Text = "Database\r\nAdmin";
-            this.btnDatabaseAdmin.UseVisualStyleBackColor = false;
-            this.btnDatabaseAdmin.Click += new System.EventHandler(this.btnDatabaseAdmin_Click);
-            // 
             // ChiefInvestigatorDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 1073);
-            this.Controls.Add(this.btnDatabaseAdmin);
             this.Controls.Add(this.btnProfilingReports);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblUserID);
@@ -329,6 +312,5 @@
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnProfilingReports;
-        private System.Windows.Forms.Button btnDatabaseAdmin;
     }
 }
