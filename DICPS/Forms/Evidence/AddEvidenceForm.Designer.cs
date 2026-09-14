@@ -164,6 +164,10 @@
             this.btnSaveEvidence.TabIndex = 30;
             this.btnSaveEvidence.Text = "Save Evidence";
             this.btnSaveEvidence.UseVisualStyleBackColor = false;
+
+            // Save Evidence button event
+            this.btnSaveEvidence.Click += new System.EventHandler(this.btnSaveEvidence_Click);
+
             // 
             // label2
             // 
@@ -206,6 +210,10 @@
             this.btnVerify.TabIndex = 34;
             this.btnVerify.Text = "Verify";
             this.btnVerify.UseVisualStyleBackColor = false;
+
+            // Verify button event
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
+
             // 
             // lblVerifyResult
             // 
@@ -243,6 +251,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEvidenceForm";
             this.Text = "AddEvidenceForm";
+
+            // Form Load event
+            this.Load += new System.EventHandler(this.AddEvidenceForm_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
