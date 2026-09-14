@@ -67,6 +67,10 @@ namespace DICPS.Forms.Shared
 
             MessageBox.Show("Registration successful!");
             ClearForm();
+
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
         }
 
         private void rbDetective_CheckedChanged(object sender, EventArgs e)

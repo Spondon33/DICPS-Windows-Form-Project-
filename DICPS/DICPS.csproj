@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -81,18 +82,6 @@
     </Compile>
     <Compile Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.Designer.cs">
       <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChiefInvestigator\DashboardForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChiefInvestigator\DashboardForm.Designer.cs">
-      <DependentUpon>DashboardForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChiefInvestigator\DatabaseAdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChiefInvestigator\DatabaseAdminForm.Designer.cs">
-      <DependentUpon>DatabaseAdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChiefInvestigator\ProfilingReportForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +148,7 @@
     <Compile Include="Models\CaseRecords\ColdCase.cs" />
     <Compile Include="Models\CaseRecords\CriminalCase.cs" />
     <Compile Include="Models\CaseRecords\WitnessCaseLink.cs" />
+    <Compile Include="Models\ChiefInvestigator\DashboardData.cs" />
     <Compile Include="Models\ChiefInvestigator\ProfilingEngine.cs" />
     <Compile Include="Models\ChiefInvestigator\ProfilingReport.cs" />
     <Compile Include="Models\Detective\CaseNote.cs" />
@@ -190,6 +180,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Evidence\EvidenceReportForm.resx">
       <DependentUpon>EvidenceReportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.resx">
+      <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChiefInvestigator\ProfilingReportForm.resx">
+      <DependentUpon>ProfilingReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Shared\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
