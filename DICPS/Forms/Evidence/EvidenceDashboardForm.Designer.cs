@@ -117,9 +117,9 @@
             this.btnSearchByCase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSearchByCase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchByCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSearchByCase.Location = new System.Drawing.Point(804, 180);
+            this.btnSearchByCase.Location = new System.Drawing.Point(804, 162);
             this.btnSearchByCase.Name = "btnSearchByCase";
-            this.btnSearchByCase.Size = new System.Drawing.Size(153, 43);
+            this.btnSearchByCase.Size = new System.Drawing.Size(153, 61);
             this.btnSearchByCase.TabIndex = 21;
             this.btnSearchByCase.Text = "Search";
             this.btnSearchByCase.UseVisualStyleBackColor = false;
@@ -154,9 +154,9 @@
             this.btnSearchByType.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSearchByType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchByType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSearchByType.Location = new System.Drawing.Point(804, 268);
+            this.btnSearchByType.Location = new System.Drawing.Point(804, 257);
             this.btnSearchByType.Name = "btnSearchByType";
-            this.btnSearchByType.Size = new System.Drawing.Size(153, 43);
+            this.btnSearchByType.Size = new System.Drawing.Size(153, 59);
             this.btnSearchByType.TabIndex = 24;
             this.btnSearchByType.Text = "Search";
             this.btnSearchByType.UseVisualStyleBackColor = false;
@@ -171,7 +171,7 @@
             this.btnShowUnlinked.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnShowUnlinked.Location = new System.Drawing.Point(311, 754);
             this.btnShowUnlinked.Name = "btnShowUnlinked";
-            this.btnShowUnlinked.Size = new System.Drawing.Size(381, 43);
+            this.btnShowUnlinked.Size = new System.Drawing.Size(381, 58);
             this.btnShowUnlinked.TabIndex = 25;
             this.btnShowUnlinked.Text = "Show Unlinked Evidence";
             this.btnShowUnlinked.UseVisualStyleBackColor = false;
@@ -184,9 +184,9 @@
             this.btnShowAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnShowAll.Location = new System.Drawing.Point(417, 1061);
+            this.btnShowAll.Location = new System.Drawing.Point(417, 1044);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(153, 43);
+            this.btnShowAll.Size = new System.Drawing.Size(153, 60);
             this.btnShowAll.TabIndex = 26;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = false;
@@ -212,7 +212,7 @@
             this.btnAddEvidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnAddEvidence.Location = new System.Drawing.Point(202, 855);
             this.btnAddEvidence.Name = "btnAddEvidence";
-            this.btnAddEvidence.Size = new System.Drawing.Size(244, 43);
+            this.btnAddEvidence.Size = new System.Drawing.Size(244, 58);
             this.btnAddEvidence.TabIndex = 28;
             this.btnAddEvidence.Text = "Add Evidence";
             this.btnAddEvidence.UseVisualStyleBackColor = false;
@@ -227,7 +227,7 @@
             this.btnDeleteEvidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnDeleteEvidence.Location = new System.Drawing.Point(531, 855);
             this.btnDeleteEvidence.Name = "btnDeleteEvidence";
-            this.btnDeleteEvidence.Size = new System.Drawing.Size(261, 43);
+            this.btnDeleteEvidence.Size = new System.Drawing.Size(261, 58);
             this.btnDeleteEvidence.TabIndex = 29;
             this.btnDeleteEvidence.Text = "Delete Evidence";
             this.btnDeleteEvidence.UseVisualStyleBackColor = false;
@@ -242,7 +242,7 @@
             this.btnChainOfCustody.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnChainOfCustody.Location = new System.Drawing.Point(202, 958);
             this.btnChainOfCustody.Name = "btnChainOfCustody";
-            this.btnChainOfCustody.Size = new System.Drawing.Size(249, 43);
+            this.btnChainOfCustody.Size = new System.Drawing.Size(249, 60);
             this.btnChainOfCustody.TabIndex = 30;
             this.btnChainOfCustody.Text = "Chain of Custody";
             this.btnChainOfCustody.UseVisualStyleBackColor = false;
@@ -257,7 +257,7 @@
             this.btnEvidenceReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnEvidenceReport.Location = new System.Drawing.Point(531, 958);
             this.btnEvidenceReport.Name = "btnEvidenceReport";
-            this.btnEvidenceReport.Size = new System.Drawing.Size(261, 43);
+            this.btnEvidenceReport.Size = new System.Drawing.Size(261, 60);
             this.btnEvidenceReport.TabIndex = 31;
             this.btnEvidenceReport.Text = "Evidence Report";
             this.btnEvidenceReport.UseVisualStyleBackColor = false;
