@@ -31,5 +31,15 @@ namespace DICPS.Forms.Detective
         {
 
         }
+
+        private void lblsresult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvsresult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
