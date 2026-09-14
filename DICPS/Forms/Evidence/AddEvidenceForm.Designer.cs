@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1550, 812);
+            this.ClientSize = new System.Drawing.Size(1444, 812);
             this.Controls.Add(this.lblVerifyResult);
             this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.txtEvidenceIdToVerify);

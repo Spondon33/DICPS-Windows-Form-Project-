@@ -28,170 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDICPS = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblEvidenceId = new System.Windows.Forms.Label();
+            this.lblChainOfCustody = new System.Windows.Forms.Label();
+            this.dgvCustodyLog = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNotes = new System.Windows.Forms.RichTextBox();
+            this.btnAddLog = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustodyLog)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblDICPS
+            // lblEvidenceId
             // 
-            this.lblDICPS.AutoSize = true;
-            this.lblDICPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDICPS.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblDICPS.Location = new System.Drawing.Point(182, 35);
-            this.lblDICPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDICPS.Name = "lblDICPS";
-            this.lblDICPS.Size = new System.Drawing.Size(433, 72);
-            this.lblDICPS.TabIndex = 3;
-            this.lblDICPS.Text = "Detective Investigation \r\nand Criminal Profiling System";
-            this.lblDICPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEvidenceId.AutoSize = true;
+            this.lblEvidenceId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidenceId.Location = new System.Drawing.Point(64, 120);
+            this.lblEvidenceId.Name = "lblEvidenceId";
+            this.lblEvidenceId.Size = new System.Drawing.Size(186, 32);
+            this.lblEvidenceId.TabIndex = 21;
+            this.lblEvidenceId.Text = "Evidence ID:";
+            this.lblEvidenceId.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
+            // lblChainOfCustody
             // 
-            this.button1.Location = new System.Drawing.Point(205, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Evidence ID :";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblChainOfCustody.AutoSize = true;
+            this.lblChainOfCustody.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.lblChainOfCustody.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblChainOfCustody.Location = new System.Drawing.Point(22, 22);
+            this.lblChainOfCustody.Name = "lblChainOfCustody";
+            this.lblChainOfCustody.Size = new System.Drawing.Size(292, 38);
+            this.lblChainOfCustody.TabIndex = 22;
+            this.lblChainOfCustody.Text = "Chain Of Custody";
             // 
-            // textBox1
+            // dgvCustodyLog
             // 
-            this.textBox1.Location = new System.Drawing.Point(331, 169);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 22);
-            this.textBox1.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(205, 200);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 22);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Case ID :";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(331, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(205, 228);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Handled By :";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(331, 229);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 22);
-            this.textBox3.TabIndex = 9;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(205, 257);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Action :";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Received",
-            "Transferred",
-            "Stored",
-            "Released",
-            "Returned"});
-            this.comboBox1.Location = new System.Drawing.Point(331, 257);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 24);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(205, 286);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Date & Time :";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(331, 287);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 22);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(205, 315);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 23);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Location :";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(331, 316);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(260, 22);
-            this.textBox4.TabIndex = 15;
+            this.dgvCustodyLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustodyLog.Location = new System.Drawing.Point(70, 185);
+            this.dgvCustodyLog.Name = "dgvCustodyLog";
+            this.dgvCustodyLog.RowHeadersWidth = 72;
+            this.dgvCustodyLog.RowTemplate.Height = 31;
+            this.dgvCustodyLog.Size = new System.Drawing.Size(639, 233);
+            this.dgvCustodyLog.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(328, 125);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 464);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "CHAIN OF CUSTODY";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(102, 32);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Notes:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(190, 468);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(421, 109);
+            this.txtNotes.TabIndex = 25;
+            this.txtNotes.Text = "";
+            // 
+            // btnAddLog
+            // 
+            this.btnAddLog.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAddLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAddLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAddLog.Location = new System.Drawing.Point(226, 631);
+            this.btnAddLog.Name = "btnAddLog";
+            this.btnAddLog.Size = new System.Drawing.Size(340, 43);
+            this.btnAddLog.TabIndex = 35;
+            this.btnAddLog.Text = "Add Custody Entry";
+            this.btnAddLog.UseVisualStyleBackColor = false;
             // 
             // ChainOfCustodyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 760);
+            this.Controls.Add(this.btnAddLog);
+            this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblDICPS);
+            this.Controls.Add(this.dgvCustodyLog);
+            this.Controls.Add(this.lblChainOfCustody);
+            this.Controls.Add(this.lblEvidenceId);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChainOfCustodyForm";
             this.Text = "ChainOfCustodyForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustodyLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,19 +124,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDICPS;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblEvidenceId;
+        private System.Windows.Forms.Label lblChainOfCustody;
+        private System.Windows.Forms.DataGridView dgvCustodyLog;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox txtNotes;
+        private System.Windows.Forms.Button btnAddLog;
     }
 }
