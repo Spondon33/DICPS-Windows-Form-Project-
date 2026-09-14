@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace DICPS.Models.Evidence
 {
-    internal class DigitalEvidence
+    public class DigitalEvidence : Evidence
     {
+        public override bool Verify()
+        {
+            return VerifyDigitalHash();
+        }
+
+        public bool VerifyDigitalHash()
+        {
+            return !string.IsNullOrWhiteSpace(HashValue);
+        }
     }
 }
