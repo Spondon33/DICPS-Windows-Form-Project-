@@ -60,6 +60,7 @@
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // lblLoggedInName
             // 
@@ -69,6 +70,7 @@
             this.lblLoggedInName.Size = new System.Drawing.Size(70, 25);
             this.lblLoggedInName.TabIndex = 20;
             this.lblLoggedInName.Text = "Name:";
+            this.lblLoggedInName.Click += new System.EventHandler(this.lblLoggedInName_Click);
             // 
             // lblLoggedInUserId
             // 
@@ -78,6 +80,7 @@
             this.lblLoggedInUserId.Size = new System.Drawing.Size(78, 25);
             this.lblLoggedInUserId.TabIndex = 19;
             this.lblLoggedInUserId.Text = "UserID:";
+            this.lblLoggedInUserId.Click += new System.EventHandler(this.lblLoggedInUserId_Click);
             // 
             // lblCaseRecordDashboard
             // 
@@ -122,6 +125,7 @@
             this.lblClosedCaseCount.Size = new System.Drawing.Size(27, 29);
             this.lblClosedCaseCount.TabIndex = 20;
             this.lblClosedCaseCount.Text = "0";
+            this.lblClosedCaseCount.Click += new System.EventHandler(this.lblClosedCaseCount_Click);
             // 
             // lblCaseCount
             // 
@@ -132,6 +136,7 @@
             this.lblCaseCount.Size = new System.Drawing.Size(27, 29);
             this.lblCaseCount.TabIndex = 19;
             this.lblCaseCount.Text = "0";
+            this.lblCaseCount.Click += new System.EventHandler(this.lblCaseCount_Click);
             // 
             // lblClosedCases
             // 
@@ -162,6 +167,7 @@
             this.lblOpenCaseCount.Size = new System.Drawing.Size(27, 29);
             this.lblOpenCaseCount.TabIndex = 20;
             this.lblOpenCaseCount.Text = "0";
+            this.lblOpenCaseCount.Click += new System.EventHandler(this.lblOpenCaseCount_Click);
             // 
             // lblOpenCases
             // 
@@ -182,6 +188,7 @@
             this.lblColdCaseCount.Size = new System.Drawing.Size(27, 29);
             this.lblColdCaseCount.TabIndex = 22;
             this.lblColdCaseCount.Text = "0";
+            this.lblColdCaseCount.Click += new System.EventHandler(this.lblColdCaseCount_Click);
             // 
             // lblColdCases
             // 
@@ -206,6 +213,7 @@
             this.btnCaseFile.TabIndex = 23;
             this.btnCaseFile.Text = "Case File";
             this.btnCaseFile.UseVisualStyleBackColor = false;
+            this.btnCaseFile.Click += new System.EventHandler(this.btnCaseFile_Click);
             // 
             // btnCaseSearch
             // 
@@ -220,6 +228,7 @@
             this.btnCaseSearch.TabIndex = 24;
             this.btnCaseSearch.Text = "Case Search";
             this.btnCaseSearch.UseVisualStyleBackColor = false;
+            this.btnCaseSearch.Click += new System.EventHandler(this.btnCaseSearch_Click);
             // 
             // btnColdCases
             // 
@@ -234,6 +243,7 @@
             this.btnColdCases.TabIndex = 25;
             this.btnColdCases.Text = "Cold Cases";
             this.btnColdCases.UseVisualStyleBackColor = false;
+            this.btnColdCases.Click += new System.EventHandler(this.btnColdCases_Click);
             // 
             // CaseRecordsDashboardForm
             // 
@@ -250,6 +260,7 @@
             this.Controls.Add(this.lblCaseRecordDashboard);
             this.Name = "CaseRecordsDashboardForm";
             this.Text = "CaseRecordsDashboardForm";
+            this.Load += new System.EventHandler(this.CaseRecordsDashboardForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
