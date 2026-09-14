@@ -101,6 +101,10 @@
             this.btnAddLog.TabIndex = 35;
             this.btnAddLog.Text = "Add Custody Entry";
             this.btnAddLog.UseVisualStyleBackColor = false;
+
+            // Add Custody Entry button event
+            this.btnAddLog.Click += new System.EventHandler(this.btnAddLog_Click);
+
             // 
             // ChainOfCustodyForm
             // 
@@ -116,6 +120,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChainOfCustodyForm";
             this.Text = "ChainOfCustodyForm";
+
+            // Form Load event
+            this.Load += new System.EventHandler(this.ChainOfCustodyForm_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustodyLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

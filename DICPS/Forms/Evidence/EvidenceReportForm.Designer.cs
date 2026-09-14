@@ -79,6 +79,10 @@
             this.btnGenerateReport.TabIndex = 36;
             this.btnGenerateReport.Text = "Generate Report";
             this.btnGenerateReport.UseVisualStyleBackColor = false;
+
+            // EVENT
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
+
             // 
             // lblReportTitle
             // 
