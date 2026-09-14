@@ -33,6 +33,7 @@
             this.btnCaseSearch = new System.Windows.Forms.Button();
             this.btnNewCase = new System.Windows.Forms.Button();
             this.lblcrd = new System.Windows.Forms.Label();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDICPS
@@ -55,16 +56,18 @@
             this.btnColdCase.TabIndex = 7;
             this.btnColdCase.Text = "Cold Case";
             this.btnColdCase.UseVisualStyleBackColor = true;
+            this.btnColdCase.Click += new System.EventHandler(this.btnColdCase_Click);
             // 
             // btnCaseSearch
             // 
             this.btnCaseSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaseSearch.Location = new System.Drawing.Point(293, 247);
+            this.btnCaseSearch.Location = new System.Drawing.Point(173, 256);
             this.btnCaseSearch.Name = "btnCaseSearch";
             this.btnCaseSearch.Size = new System.Drawing.Size(130, 35);
             this.btnCaseSearch.TabIndex = 8;
             this.btnCaseSearch.Text = "CaseSearch";
             this.btnCaseSearch.UseVisualStyleBackColor = true;
+            this.btnCaseSearch.Click += new System.EventHandler(this.btnCaseSearch_Click);
             // 
             // btnNewCase
             // 
@@ -75,6 +78,7 @@
             this.btnNewCase.TabIndex = 9;
             this.btnNewCase.Text = "New Case";
             this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Click += new System.EventHandler(this.btnNewCase_Click);
             // 
             // lblcrd
             // 
@@ -85,12 +89,25 @@
             this.lblcrd.Size = new System.Drawing.Size(480, 32);
             this.lblcrd.TabIndex = 10;
             this.lblcrd.Text = "Welcome to CaseRecordsDashboard";
+            this.lblcrd.Click += new System.EventHandler(this.lblcrd_Click);
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.Location = new System.Drawing.Point(412, 256);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(130, 35);
+            this.btnlogout.TabIndex = 11;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // CaseRecordsDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.lblcrd);
             this.Controls.Add(this.btnNewCase);
             this.Controls.Add(this.btnCaseSearch);
@@ -111,5 +128,6 @@
         private System.Windows.Forms.Button btnCaseSearch;
         private System.Windows.Forms.Button btnNewCase;
         private System.Windows.Forms.Label lblcrd;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
