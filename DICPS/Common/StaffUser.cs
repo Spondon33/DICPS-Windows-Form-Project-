@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DICPS.Common
 {
-    internal class StaffUser
+    public class StaffUser
     {
         public int UserId { get; set; }
         public string Name { get; set; }
