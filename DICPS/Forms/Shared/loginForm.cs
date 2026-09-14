@@ -65,7 +65,7 @@ namespace DICPS.Forms.Shared
                         caseRecordsDashboard.Show();
                         break;
                     case "Forensic Officer":
-                        EvidenceDashboardForm evidenceDashboard = new EvidenceDashboardForm();
+                        EvidenceDashboardForm evidenceDashboard = new EvidenceDashboardForm(currentUser);
                         evidenceDashboard.Show();
                         break;
                     case "Chief Investigator":
