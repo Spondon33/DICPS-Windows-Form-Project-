@@ -41,11 +41,11 @@
             this.grpLinkedSuspects = new System.Windows.Forms.GroupBox();
             this.dgvSuspects = new System.Windows.Forms.DataGridView();
             this.grpCaseNotes = new System.Windows.Forms.GroupBox();
-            this.dgvCaseNotes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNewNote = new System.Windows.Forms.RichTextBox();
-            this.btnAddNote = new System.Windows.Forms.Button();
             this.btnDeleteNote = new System.Windows.Forms.Button();
+            this.btnAddNote = new System.Windows.Forms.Button();
+            this.txtNewNote = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvCaseNotes = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCases)).BeginInit();
             this.grpCaseSearch.SuspendLayout();
@@ -100,6 +100,7 @@
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
+            "All",
             "Open",
             "Closed",
             "Under Review"});
@@ -209,35 +210,20 @@
             this.grpCaseNotes.TabStop = false;
             this.grpCaseNotes.Text = "Case Notes";
             // 
-            // dgvCaseNotes
+            // btnDeleteNote
             // 
-            this.dgvCaseNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCaseNotes.Location = new System.Drawing.Point(19, 41);
-            this.dgvCaseNotes.Name = "dgvCaseNotes";
-            this.dgvCaseNotes.RowHeadersWidth = 72;
-            this.dgvCaseNotes.RowTemplate.Height = 31;
-            this.dgvCaseNotes.Size = new System.Drawing.Size(991, 179);
-            this.dgvCaseNotes.TabIndex = 12;
-            this.dgvCaseNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaseNotes_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(14, 249);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 30);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "New Note:";
-            // 
-            // txtNewNote
-            // 
-            this.txtNewNote.Location = new System.Drawing.Point(163, 249);
-            this.txtNewNote.Name = "txtNewNote";
-            this.txtNewNote.Size = new System.Drawing.Size(368, 67);
-            this.txtNewNote.TabIndex = 13;
-            this.txtNewNote.Text = "";
-            this.txtNewNote.TextChanged += new System.EventHandler(this.txtNewNote_TextChanged);
+            this.btnDeleteNote.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDeleteNote.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDeleteNote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDeleteNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteNote.Location = new System.Drawing.Point(772, 257);
+            this.btnDeleteNote.Name = "btnDeleteNote";
+            this.btnDeleteNote.Size = new System.Drawing.Size(189, 59);
+            this.btnDeleteNote.TabIndex = 14;
+            this.btnDeleteNote.Text = "Delete Note";
+            this.btnDeleteNote.UseVisualStyleBackColor = false;
+            this.btnDeleteNote.Click += new System.EventHandler(this.btnDeleteNote_Click);
             // 
             // btnAddNote
             // 
@@ -254,20 +240,35 @@
             this.btnAddNote.UseVisualStyleBackColor = false;
             this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
             // 
-            // btnDeleteNote
+            // txtNewNote
             // 
-            this.btnDeleteNote.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDeleteNote.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDeleteNote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteNote.Location = new System.Drawing.Point(772, 257);
-            this.btnDeleteNote.Name = "btnDeleteNote";
-            this.btnDeleteNote.Size = new System.Drawing.Size(189, 59);
-            this.btnDeleteNote.TabIndex = 14;
-            this.btnDeleteNote.Text = "Delete Note";
-            this.btnDeleteNote.UseVisualStyleBackColor = false;
-            this.btnDeleteNote.Click += new System.EventHandler(this.btnDeleteNote_Click);
+            this.txtNewNote.Location = new System.Drawing.Point(163, 249);
+            this.txtNewNote.Name = "txtNewNote";
+            this.txtNewNote.Size = new System.Drawing.Size(368, 67);
+            this.txtNewNote.TabIndex = 13;
+            this.txtNewNote.Text = "";
+            this.txtNewNote.TextChanged += new System.EventHandler(this.txtNewNote_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(14, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 30);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "New Note:";
+            // 
+            // dgvCaseNotes
+            // 
+            this.dgvCaseNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCaseNotes.Location = new System.Drawing.Point(19, 41);
+            this.dgvCaseNotes.Name = "dgvCaseNotes";
+            this.dgvCaseNotes.RowHeadersWidth = 72;
+            this.dgvCaseNotes.RowTemplate.Height = 31;
+            this.dgvCaseNotes.Size = new System.Drawing.Size(991, 179);
+            this.dgvCaseNotes.TabIndex = 12;
+            this.dgvCaseNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaseNotes_CellContentClick);
             // 
             // btnRefresh
             // 
