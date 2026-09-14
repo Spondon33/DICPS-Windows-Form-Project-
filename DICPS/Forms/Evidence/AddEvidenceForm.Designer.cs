@@ -32,9 +32,9 @@
             this.lblEvidenceType = new System.Windows.Forms.Label();
             this.cmbEvidenceType = new System.Windows.Forms.ComboBox();
             this.lblCaseID = new System.Windows.Forms.Label();
-            this.txtCaseID = new System.Windows.Forms.TextBox();
+            this.txtCaseId = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDateCollected = new System.Windows.Forms.DateTimePicker();
             this.lblHashValue = new System.Windows.Forms.Label();
@@ -89,12 +89,12 @@
             this.lblCaseID.Text = "Case ID:";
             this.lblCaseID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtCaseID
+            // txtCaseId
             // 
-            this.txtCaseID.Location = new System.Drawing.Point(305, 190);
-            this.txtCaseID.Name = "txtCaseID";
-            this.txtCaseID.Size = new System.Drawing.Size(361, 29);
-            this.txtCaseID.TabIndex = 23;
+            this.txtCaseId.Location = new System.Drawing.Point(305, 190);
+            this.txtCaseId.Name = "txtCaseId";
+            this.txtCaseId.Size = new System.Drawing.Size(361, 29);
+            this.txtCaseId.TabIndex = 23;
             // 
             // lblDescription
             // 
@@ -107,13 +107,13 @@
             this.lblDescription.Text = "Description:";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // richTextBox1
+            // txtDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(305, 258);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(361, 126);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.txtDescription.Location = new System.Drawing.Point(305, 258);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(361, 126);
+            this.txtDescription.TabIndex = 25;
+            this.txtDescription.Text = "";
             // 
             // label1
             // 
@@ -233,14 +233,14 @@
             this.Controls.Add(this.lblHashValue);
             this.Controls.Add(this.dtpDateCollected);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.txtCaseID);
+            this.Controls.Add(this.txtCaseId);
             this.Controls.Add(this.lblCaseID);
             this.Controls.Add(this.cmbEvidenceType);
             this.Controls.Add(this.lblEvidenceType);
             this.Controls.Add(this.lblAddEvidenceForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEvidenceForm";
             this.Text = "AddEvidenceForm";
             this.ResumeLayout(false);
@@ -254,9 +254,9 @@
         private System.Windows.Forms.Label lblEvidenceType;
         private System.Windows.Forms.ComboBox cmbEvidenceType;
         private System.Windows.Forms.Label lblCaseID;
-        private System.Windows.Forms.TextBox txtCaseID;
+        private System.Windows.Forms.TextBox txtCaseId;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateCollected;
         private System.Windows.Forms.Label lblHashValue;

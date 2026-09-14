@@ -25,7 +25,7 @@ namespace DICPS.Forms.Evidence
 
         private void EvidenceDashboardForm_Load(object sender, EventArgs e)
         {
-            lblLoggedInUserId.Text = "User ID: " + loggedInUser.UserId;
+            //lblLoggedInUserId.Text = "User ID: " + loggedInUser.UserId;
             lblLoggedInName.Text = "Name: " + loggedInUser.Name;
 
             LoadAllEvidence();

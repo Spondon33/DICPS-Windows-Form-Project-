@@ -180,6 +180,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Evidence\EvidenceReportForm.resx">
       <DependentUpon>EvidenceReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.resx">
       <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
