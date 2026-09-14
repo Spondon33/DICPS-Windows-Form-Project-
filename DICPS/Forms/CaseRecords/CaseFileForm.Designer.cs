@@ -92,6 +92,7 @@
             // 
             this.textCaseNo.Location = new System.Drawing.Point(225, 106);
             this.textCaseNo.Name = "textCaseNo";
+            this.textCaseNo.ReadOnly = true;
             this.textCaseNo.Size = new System.Drawing.Size(136, 22);
             this.textCaseNo.TabIndex = 5;
             // 
@@ -140,6 +141,7 @@
             // 
             this.textPriority.Location = new System.Drawing.Point(227, 257);
             this.textPriority.Name = "textPriority";
+            this.textPriority.ReadOnly = true;
             this.textPriority.Size = new System.Drawing.Size(105, 22);
             this.textPriority.TabIndex = 10;
             // 
