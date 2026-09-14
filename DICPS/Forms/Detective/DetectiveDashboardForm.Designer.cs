@@ -33,12 +33,12 @@
             this.lblDetectiveDashboard = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCaseTitle = new System.Windows.Forms.Label();
+            this.lblWitnessCount = new System.Windows.Forms.Label();
             this.lblCaseCount = new System.Windows.Forms.Label();
+            this.lblWitnessTitle = new System.Windows.Forms.Label();
+            this.lblCaseTitle = new System.Windows.Forms.Label();
             this.lblSuspectCount = new System.Windows.Forms.Label();
             this.lblSuspectTitle = new System.Windows.Forms.Label();
-            this.lblWitnessCount = new System.Windows.Forms.Label();
-            this.lblWitnessTitle = new System.Windows.Forms.Label();
             this.btnCaseLoad = new System.Windows.Forms.Button();
             this.btnPersonSearch = new System.Windows.Forms.Button();
             this.btnRegisterPerson = new System.Windows.Forms.Button();
@@ -101,13 +101,43 @@
             this.tableLayoutPanel1.Controls.Add(this.lblCaseTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblSuspectCount, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblSuspectTitle, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(73, 179);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 179);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 85);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(697, 103);
             this.tableLayoutPanel1.TabIndex = 18;
+            // 
+            // lblWitnessCount
+            // 
+            this.lblWitnessCount.AutoSize = true;
+            this.lblWitnessCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWitnessCount.Location = new System.Drawing.Point(467, 51);
+            this.lblWitnessCount.Name = "lblWitnessCount";
+            this.lblWitnessCount.Size = new System.Drawing.Size(27, 29);
+            this.lblWitnessCount.TabIndex = 20;
+            this.lblWitnessCount.Text = "0";
+            // 
+            // lblCaseCount
+            // 
+            this.lblCaseCount.AutoSize = true;
+            this.lblCaseCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaseCount.Location = new System.Drawing.Point(3, 51);
+            this.lblCaseCount.Name = "lblCaseCount";
+            this.lblCaseCount.Size = new System.Drawing.Size(27, 29);
+            this.lblCaseCount.TabIndex = 19;
+            this.lblCaseCount.Text = "0";
+            // 
+            // lblWitnessTitle
+            // 
+            this.lblWitnessTitle.AutoSize = true;
+            this.lblWitnessTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWitnessTitle.Location = new System.Drawing.Point(467, 0);
+            this.lblWitnessTitle.Name = "lblWitnessTitle";
+            this.lblWitnessTitle.Size = new System.Drawing.Size(180, 29);
+            this.lblWitnessTitle.TabIndex = 21;
+            this.lblWitnessTitle.Text = "My Witnesses:";
             // 
             // lblCaseTitle
             // 
@@ -119,21 +149,11 @@
             this.lblCaseTitle.TabIndex = 19;
             this.lblCaseTitle.Text = "My Cases:";
             // 
-            // lblCaseCount
-            // 
-            this.lblCaseCount.AutoSize = true;
-            this.lblCaseCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaseCount.Location = new System.Drawing.Point(3, 42);
-            this.lblCaseCount.Name = "lblCaseCount";
-            this.lblCaseCount.Size = new System.Drawing.Size(27, 29);
-            this.lblCaseCount.TabIndex = 19;
-            this.lblCaseCount.Text = "0";
-            // 
             // lblSuspectCount
             // 
             this.lblSuspectCount.AutoSize = true;
             this.lblSuspectCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuspectCount.Location = new System.Drawing.Point(197, 42);
+            this.lblSuspectCount.Location = new System.Drawing.Point(235, 51);
             this.lblSuspectCount.Name = "lblSuspectCount";
             this.lblSuspectCount.Size = new System.Drawing.Size(27, 29);
             this.lblSuspectCount.TabIndex = 20;
@@ -143,31 +163,11 @@
             // 
             this.lblSuspectTitle.AutoSize = true;
             this.lblSuspectTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuspectTitle.Location = new System.Drawing.Point(197, 0);
+            this.lblSuspectTitle.Location = new System.Drawing.Point(235, 0);
             this.lblSuspectTitle.Name = "lblSuspectTitle";
             this.lblSuspectTitle.Size = new System.Drawing.Size(167, 29);
             this.lblSuspectTitle.TabIndex = 21;
             this.lblSuspectTitle.Text = "My Suspects:";
-            // 
-            // lblWitnessCount
-            // 
-            this.lblWitnessCount.AutoSize = true;
-            this.lblWitnessCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWitnessCount.Location = new System.Drawing.Point(391, 42);
-            this.lblWitnessCount.Name = "lblWitnessCount";
-            this.lblWitnessCount.Size = new System.Drawing.Size(27, 29);
-            this.lblWitnessCount.TabIndex = 20;
-            this.lblWitnessCount.Text = "0";
-            // 
-            // lblWitnessTitle
-            // 
-            this.lblWitnessTitle.AutoSize = true;
-            this.lblWitnessTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWitnessTitle.Location = new System.Drawing.Point(391, 0);
-            this.lblWitnessTitle.Name = "lblWitnessTitle";
-            this.lblWitnessTitle.Size = new System.Drawing.Size(180, 29);
-            this.lblWitnessTitle.TabIndex = 21;
-            this.lblWitnessTitle.Text = "My Witnesses:";
             // 
             // btnCaseLoad
             // 

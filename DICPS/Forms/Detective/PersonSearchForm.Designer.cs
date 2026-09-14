@@ -174,7 +174,7 @@
             this.grpPersonHistory.Size = new System.Drawing.Size(818, 247);
             this.grpPersonHistory.TabIndex = 16;
             this.grpPersonHistory.TabStop = false;
-            this.grpPersonHistory.Text = "Search Results";
+            this.grpPersonHistory.Text = "Person History";
             // 
             // dgvPersonHistory
             // 

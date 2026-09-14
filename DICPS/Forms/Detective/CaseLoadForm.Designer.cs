@@ -103,7 +103,7 @@
             "All",
             "Open",
             "Closed",
-            "Under Review"});
+            "Cold"});
             this.cmbStatus.Location = new System.Drawing.Point(132, 106);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(191, 32);

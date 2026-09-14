@@ -79,7 +79,7 @@
             // 
             // txtPhysicalDescription
             // 
-            this.txtPhysicalDescription.Location = new System.Drawing.Point(306, 223);
+            this.txtPhysicalDescription.Location = new System.Drawing.Point(336, 223);
             this.txtPhysicalDescription.Name = "txtPhysicalDescription";
             this.txtPhysicalDescription.Size = new System.Drawing.Size(344, 96);
             this.txtPhysicalDescription.TabIndex = 11;
@@ -119,7 +119,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(208, 104);
+            this.txtName.Location = new System.Drawing.Point(238, 104);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(358, 29);
             this.txtName.TabIndex = 5;
@@ -143,7 +143,7 @@
             "All",
             "Suspect",
             "Witness"});
-            this.cmbPersonType.Location = new System.Drawing.Point(208, 47);
+            this.cmbPersonType.Location = new System.Drawing.Point(238, 47);
             this.cmbPersonType.Name = "cmbPersonType";
             this.cmbPersonType.Size = new System.Drawing.Size(216, 32);
             this.cmbPersonType.TabIndex = 7;
@@ -211,7 +211,7 @@
             // 
             // txtContactInfo
             // 
-            this.txtContactInfo.Location = new System.Drawing.Point(208, 165);
+            this.txtContactInfo.Location = new System.Drawing.Point(238, 165);
             this.txtContactInfo.Name = "txtContactInfo";
             this.txtContactInfo.Size = new System.Drawing.Size(358, 29);
             this.txtContactInfo.TabIndex = 12;

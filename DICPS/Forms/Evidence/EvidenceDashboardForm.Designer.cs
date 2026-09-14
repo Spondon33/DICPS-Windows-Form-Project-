@@ -210,7 +210,7 @@
             this.btnAddEvidence.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAddEvidence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEvidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAddEvidence.Location = new System.Drawing.Point(202, 855);
+            this.btnAddEvidence.Location = new System.Drawing.Point(190, 855);
             this.btnAddEvidence.Name = "btnAddEvidence";
             this.btnAddEvidence.Size = new System.Drawing.Size(244, 58);
             this.btnAddEvidence.TabIndex = 28;
@@ -240,9 +240,9 @@
             this.btnChainOfCustody.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnChainOfCustody.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChainOfCustody.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnChainOfCustody.Location = new System.Drawing.Point(202, 958);
+            this.btnChainOfCustody.Location = new System.Drawing.Point(173, 958);
             this.btnChainOfCustody.Name = "btnChainOfCustody";
-            this.btnChainOfCustody.Size = new System.Drawing.Size(249, 60);
+            this.btnChainOfCustody.Size = new System.Drawing.Size(278, 60);
             this.btnChainOfCustody.TabIndex = 30;
             this.btnChainOfCustody.Text = "Chain of Custody";
             this.btnChainOfCustody.UseVisualStyleBackColor = false;
