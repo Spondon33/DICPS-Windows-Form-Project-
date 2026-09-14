@@ -28,168 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDICPS = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EvidenceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EvidenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EvidenceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CollectedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblEvidenceReport = new System.Windows.Forms.Label();
+            this.lblCaseID = new System.Windows.Forms.Label();
+            this.txtCaseId = new System.Windows.Forms.TextBox();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
+            this.lblReportTitle = new System.Windows.Forms.Label();
+            this.dgvReport = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblDICPS
+            // lblEvidenceReport
             // 
-            this.lblDICPS.AutoSize = true;
-            this.lblDICPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDICPS.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblDICPS.Location = new System.Drawing.Point(175, 25);
-            this.lblDICPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDICPS.Name = "lblDICPS";
-            this.lblDICPS.Size = new System.Drawing.Size(433, 72);
-            this.lblDICPS.TabIndex = 2;
-            this.lblDICPS.Text = "Detective Investigation \r\nand Criminal Profiling System";
-            this.lblDICPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDICPS.Click += new System.EventHandler(this.lblDICPS_Click);
+            this.lblEvidenceReport.AutoSize = true;
+            this.lblEvidenceReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.lblEvidenceReport.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblEvidenceReport.Location = new System.Drawing.Point(32, 26);
+            this.lblEvidenceReport.Name = "lblEvidenceReport";
+            this.lblEvidenceReport.Size = new System.Drawing.Size(274, 38);
+            this.lblEvidenceReport.TabIndex = 23;
+            this.lblEvidenceReport.Text = "Evidence Report";
             // 
-            // label1
+            // lblCaseID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "  EVIDENCE REPORT";
+            this.lblCaseID.AutoSize = true;
+            this.lblCaseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaseID.Location = new System.Drawing.Point(231, 124);
+            this.lblCaseID.Name = "lblCaseID";
+            this.lblCaseID.Size = new System.Drawing.Size(130, 32);
+            this.lblCaseID.TabIndex = 24;
+            this.lblCaseID.Text = "Case ID:";
+            this.lblCaseID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
+            // txtCaseId
             // 
-            this.button1.Location = new System.Drawing.Point(136, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = " Case ID :";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtCaseId.Location = new System.Drawing.Point(380, 126);
+            this.txtCaseId.Name = "txtCaseId";
+            this.txtCaseId.Size = new System.Drawing.Size(324, 29);
+            this.txtCaseId.TabIndex = 25;
             // 
-            // textBox1
+            // btnGenerateReport
             // 
-            this.textBox1.Location = new System.Drawing.Point(267, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 22);
-            this.textBox1.TabIndex = 5;
+            this.btnGenerateReport.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnGenerateReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGenerateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.btnGenerateReport.Location = new System.Drawing.Point(299, 204);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Size = new System.Drawing.Size(340, 43);
+            this.btnGenerateReport.TabIndex = 36;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // lblReportTitle
             // 
-            this.button2.Location = new System.Drawing.Point(136, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Evidence Type :";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lblReportTitle.AutoSize = true;
+            this.lblReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportTitle.Location = new System.Drawing.Point(231, 290);
+            this.lblReportTitle.Name = "lblReportTitle";
+            this.lblReportTitle.Size = new System.Drawing.Size(182, 32);
+            this.lblReportTitle.TabIndex = 37;
+            this.lblReportTitle.Text = "Report Title:";
+            this.lblReportTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // dgvReport
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "All",
-            "Physical",
-            "Digital",
-            "Document",
-            "Biological",
-            "Other"});
-            this.comboBox1.Location = new System.Drawing.Point(267, 185);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 24);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EvidenceId,
-            this.CaseId,
-            this.EvidenceType,
-            this.Description,
-            this.EvidenceDate,
-            this.CollectedBy,
-            this.Location});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 233);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 88);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // EvidenceId
-            // 
-            this.EvidenceId.HeaderText = "Evidence ID";
-            this.EvidenceId.MinimumWidth = 6;
-            this.EvidenceId.Name = "EvidenceId";
-            this.EvidenceId.Width = 125;
-            // 
-            // CaseId
-            // 
-            this.CaseId.HeaderText = "Case ID";
-            this.CaseId.MinimumWidth = 6;
-            this.CaseId.Name = "CaseId";
-            this.CaseId.Width = 125;
-            // 
-            // EvidenceType
-            // 
-            this.EvidenceType.HeaderText = " Evidence Type";
-            this.EvidenceType.MinimumWidth = 6;
-            this.EvidenceType.Name = "EvidenceType";
-            this.EvidenceType.Width = 125;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = " Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.Width = 125;
-            // 
-            // EvidenceDate
-            // 
-            this.EvidenceDate.HeaderText = "Date";
-            this.EvidenceDate.MinimumWidth = 6;
-            this.EvidenceDate.Name = "EvidenceDate";
-            this.EvidenceDate.Width = 125;
-            // 
-            // CollectedBy
-            // 
-            this.CollectedBy.HeaderText = " Collected By";
-            this.CollectedBy.MinimumWidth = 6;
-            this.CollectedBy.Name = "CollectedBy";
-            this.CollectedBy.Width = 125;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Location";
-            this.Location.MinimumWidth = 6;
-            this.Location.Name = "Location";
-            this.Location.Width = 125;
+            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReport.Location = new System.Drawing.Point(94, 349);
+            this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RowHeadersWidth = 72;
+            this.dgvReport.RowTemplate.Height = 31;
+            this.dgvReport.Size = new System.Drawing.Size(755, 345);
+            this.dgvReport.TabIndex = 38;
             // 
             // EvidenceReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 519);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblDICPS);
+            this.ClientSize = new System.Drawing.Size(976, 778);
+            this.Controls.Add(this.dgvReport);
+            this.Controls.Add(this.lblReportTitle);
+            this.Controls.Add(this.btnGenerateReport);
+            this.Controls.Add(this.txtCaseId);
+            this.Controls.Add(this.lblCaseID);
+            this.Controls.Add(this.lblEvidenceReport);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EvidenceReportForm";
             this.Text = "EvidenceReportForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,19 +123,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDICPS;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EvidenceId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CaseId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EvidenceType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EvidenceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CollectedBy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.Label lblEvidenceReport;
+        private System.Windows.Forms.Label lblCaseID;
+        private System.Windows.Forms.TextBox txtCaseId;
+        private System.Windows.Forms.Button btnGenerateReport;
+        private System.Windows.Forms.Label lblReportTitle;
+        private System.Windows.Forms.DataGridView dgvReport;
     }
 }
