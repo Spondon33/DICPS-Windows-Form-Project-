@@ -1,5 +1,4 @@
-﻿```csharp
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 using DICPS.Common;
@@ -212,4 +211,3 @@ namespace DICPS.Forms.Detective
         }
     }
 }
-```
