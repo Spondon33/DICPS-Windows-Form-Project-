@@ -57,7 +57,7 @@ namespace DICPS.Forms.Shared
                 switch (currentUser.Role)
                 {
                     case "Detective":
-                        DetectiveDashboardForm detectiveDashboard = new DetectiveDashboardForm();
+                        DetectiveDashboardForm detectiveDashboard = new DetectiveDashboardForm(currentUser);
                         detectiveDashboard.Show();
                         break;
                     case "Case Record Officer":

@@ -97,14 +97,11 @@
             this.btnAddLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnAddLog.Location = new System.Drawing.Point(226, 631);
             this.btnAddLog.Name = "btnAddLog";
-            this.btnAddLog.Size = new System.Drawing.Size(340, 43);
+            this.btnAddLog.Size = new System.Drawing.Size(340, 59);
             this.btnAddLog.TabIndex = 35;
             this.btnAddLog.Text = "Add Custody Entry";
             this.btnAddLog.UseVisualStyleBackColor = false;
-
-            // Add Custody Entry button event
             this.btnAddLog.Click += new System.EventHandler(this.btnAddLog_Click);
-
             // 
             // ChainOfCustodyForm
             // 
@@ -117,13 +114,10 @@
             this.Controls.Add(this.dgvCustodyLog);
             this.Controls.Add(this.lblChainOfCustody);
             this.Controls.Add(this.lblEvidenceId);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChainOfCustodyForm";
             this.Text = "ChainOfCustodyForm";
-
-            // Form Load event
             this.Load += new System.EventHandler(this.ChainOfCustodyForm_Load);
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustodyLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -73,16 +73,13 @@
             this.btnGenerateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btnGenerateReport.Location = new System.Drawing.Point(299, 204);
+            this.btnGenerateReport.Location = new System.Drawing.Point(299, 197);
             this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(340, 43);
+            this.btnGenerateReport.Size = new System.Drawing.Size(340, 66);
             this.btnGenerateReport.TabIndex = 36;
             this.btnGenerateReport.Text = "Generate Report";
             this.btnGenerateReport.UseVisualStyleBackColor = false;
-
-            // EVENT
             this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
-
             // 
             // lblReportTitle
             // 
@@ -116,7 +113,7 @@
             this.Controls.Add(this.txtCaseId);
             this.Controls.Add(this.lblCaseID);
             this.Controls.Add(this.lblEvidenceReport);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EvidenceReportForm";
             this.Text = "EvidenceReportForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
