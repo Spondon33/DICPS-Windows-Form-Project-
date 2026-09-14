@@ -7,59 +7,120 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DICPS.Common;
+using DICPS.Models.Evidence;
 
 namespace DICPS.Forms.Evidence
 {
     public partial class AddEvidenceForm : Form
     {
-        public AddEvidenceForm()
+        private StaffUser loggedInUser;
+
+        public AddEvidenceForm(StaffUser user)
         {
             InitializeComponent();
+            loggedInUser = user;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void AddEvidenceForm_Load(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-       "Do you want to verify this evidence record?",
-       "Verify Evidence",
-       MessageBoxButtons.YesNo,
-       MessageBoxIcon.Question);
+            cmbEvidenceType.Items.Add("Physical");
+            cmbEvidenceType.Items.Add("Digital");
+            cmbEvidenceType.SelectedIndex = 0;
 
-            if (result == DialogResult.Yes)
+            cmbEvidenceType.SelectedIndexChanged += cmbEvidenceType_SelectedIndexChanged;
+            UpdateHashFieldVisibility();
+        }
+
+        private void cmbEvidenceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateHashFieldVisibility();
+        }
+
+        private void UpdateHashFieldVisibility()
+        {
+            bool isDigital = cmbEvidenceType.SelectedItem.ToString() == "Digital";
+            lblHashValue.Visible = isDigital;
+            txtHashValue.Visible = isDigital;
+        }
+
+        private void btnSaveEvidence_Click(object sender, EventArgs e)
+        {
+            string description = txtDescription.Text;
+            DateTime dateCollected = dtpDateCollected.Value;
+
+            string errorMessage;
+            if (!Validator.ValidateEvidenceInput(description, dateCollected, out errorMessage))
             {
-                MessageBox.Show(
-                    "Evidence verified successfully.",
-                    "Verification",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddEvidenceForm form = new AddEvidenceForm();
-            form.Show();
-        }
+            DICPS.Models.Evidence.Evidence evidence;
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            UpdateEvidenceForm form = new UpdateEvidenceForm();
-            form.Show();
-                
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-        "Are you sure you want to delete this evidence record?",
-        "Delete Evidence",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            if (cmbEvidenceType.SelectedItem.ToString() == "Physical")
             {
-                MessageBox.Show("Evidence record deleted successfully.");
+                evidence = new PhysicalEvidence();
             }
+            else
+            {
+                evidence = new DigitalEvidence();
+                evidence.HashValue = txtHashValue.Text;
+            }
+
+            evidence.EvidenceType = cmbEvidenceType.SelectedItem.ToString();
+            evidence.Description = description;
+            evidence.DateCollected = dateCollected;
+            evidence.LoggedByUserId = loggedInUser.UserId;
+
+            if (!string.IsNullOrWhiteSpace(txtCaseId.Text))
+            {
+                evidence.CaseId = Convert.ToInt32(txtCaseId.Text);
+            }
+            else
+            {
+                evidence.CaseId = null;
+            }
+
+            evidence.AddEvidence();
+
+            MessageBox.Show("Evidence added successfully.");
+            ClearForm();
+        }
+
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEvidenceIdToVerify.Text))
+            {
+                MessageBox.Show("Enter an Evidence ID to verify.");
+                return;
+            }
+
+            int evidenceId = Convert.ToInt32(txtEvidenceIdToVerify.Text);
+
+            DICPS.Models.Evidence.Evidence evidence;
+            if (cmbEvidenceType.SelectedItem.ToString() == "Physical")
+            {
+                evidence = new PhysicalEvidence();
+            }
+            else
+            {
+                evidence = new DigitalEvidence();
+            }
+
+            evidence.EvidenceId = evidenceId;
+            bool isVerified = evidence.Verify();
+
+            lblVerifyResult.Text = isVerified ? "Status: Verified" : "Status: Not Verified";
+        }
+
+        private void ClearForm()
+        {
+            txtCaseId.Clear();
+            txtDescription.Clear();
+            txtHashValue.Clear();
+            dtpDateCollected.Value = DateTime.Now;
+            cmbEvidenceType.SelectedIndex = 0;
         }
     }
 }
