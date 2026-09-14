@@ -181,6 +181,9 @@
     <EmbeddedResource Include="Forms\Detective\DetectiveDashboardForm.resx">
       <DependentUpon>DetectiveDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Detective\PersonSearchForm.resx">
+      <DependentUpon>PersonSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Evidence\EvidenceDashboardForm.resx">
       <DependentUpon>EvidenceDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
