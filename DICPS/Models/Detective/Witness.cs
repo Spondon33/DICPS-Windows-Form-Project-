@@ -72,5 +72,65 @@ namespace DICPS.Models.Detective
                 DatabaseManager.CloseConnection(conn);
             }
         }
+
+        public static bool UpdateWitness(int witnessId, string name, string contactInfo, string statement)
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"UPDATE WITNESS
+                                 SET Name = @Name,
+                                     ContactInfo = @ContactInfo,
+                                     Statement = @Statement
+                                 WHERE WitnessID = @WitnessID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@WitnessID", witnessId);
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@ContactInfo", contactInfo);
+                cmd.Parameters.AddWithValue("@Statement", statement);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
+        public static bool DeleteWitness(int witnessId)
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"UPDATE WITNESS
+                                 SET IsActive = 0
+                                 WHERE WitnessID = @WitnessID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@WitnessID", witnessId);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
     }
 }

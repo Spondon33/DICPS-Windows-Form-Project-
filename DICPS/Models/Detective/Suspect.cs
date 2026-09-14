@@ -72,5 +72,65 @@ namespace DICPS.Models.Detective
                 DatabaseManager.CloseConnection(conn);
             }
         }
+
+        public static bool UpdateSuspect(int suspectId, string name, string contactInfo, string physicalDescription)
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"UPDATE SUSPECT
+                                 SET Name = @Name,
+                                     ContactInfo = @ContactInfo,
+                                     PhysicalDescription = @PhysicalDescription
+                                 WHERE SuspectID = @SuspectID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@SuspectID", suspectId);
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@ContactInfo", contactInfo);
+                cmd.Parameters.AddWithValue("@PhysicalDescription", physicalDescription);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
+        public static bool DeleteSuspect(int suspectId)
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"UPDATE SUSPECT
+                                 SET IsActive = 0
+                                 WHERE SuspectID = @SuspectID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SuspectID", suspectId);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
     }
 }
