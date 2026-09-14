@@ -112,6 +112,100 @@ namespace DICPS.Models.CaseRecords
             return 3;
         }
 
+        public static int GetCaseCount()
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"SELECT COUNT(*)
+                                 FROM [CASE]";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                return (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
+        public static int GetOpenCaseCount()
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"SELECT COUNT(*)
+                                 FROM [CASE]
+                                 WHERE Status = 'Open'";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                return (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
+        public static int GetClosedCaseCount()
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"SELECT COUNT(*)
+                                 FROM [CASE]
+                                 WHERE Status = 'Closed'";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                return (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
+        public static int GetColdCaseCount()
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"SELECT COUNT(*)
+                                 FROM COLD_CASE";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                return (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
         public static string GenerateCaseSummary(int caseId)
         {
             SqlConnection conn = DatabaseManager.OpenConnection();
@@ -280,12 +374,23 @@ namespace DICPS.Models.CaseRecords
                     return false;
                 }
 
-                string linkQuery = @"DELETE FROM CASE_SUSPECT_LINK
-                                     WHERE CaseID = @CaseID";
+                string suspectLinkQuery = @"DELETE FROM CASE_SUSPECT_LINK
+                                            WHERE CaseID = @CaseID";
 
-                SqlCommand linkCmd = new SqlCommand(linkQuery, conn);
-                linkCmd.Parameters.AddWithValue("@CaseID", caseId);
-                linkCmd.ExecuteNonQuery();
+                SqlCommand suspectLinkCmd =
+                    new SqlCommand(suspectLinkQuery, conn);
+
+                suspectLinkCmd.Parameters.AddWithValue("@CaseID", caseId);
+                suspectLinkCmd.ExecuteNonQuery();
+
+                string witnessLinkQuery = @"DELETE FROM WITNESS_CASE_LINK
+                                            WHERE CaseID = @CaseID";
+
+                SqlCommand witnessLinkCmd =
+                    new SqlCommand(witnessLinkQuery, conn);
+
+                witnessLinkCmd.Parameters.AddWithValue("@CaseID", caseId);
+                witnessLinkCmd.ExecuteNonQuery();
 
                 string noteQuery = @"DELETE FROM CASE_NOTE
                                      WHERE CaseID = @CaseID";
