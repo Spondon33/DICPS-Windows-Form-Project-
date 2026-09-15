@@ -169,8 +169,17 @@
     <Compile Include="Forms\Shared\RegisterUserForm.Designer.cs">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CaseRecords\CaseFileForm.resx">
+      <DependentUpon>CaseFileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CaseRecords\CaseRecordsDashboardForm.resx">
       <DependentUpon>CaseRecordsDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseRecords\CaseSearchForm.resx">
+      <DependentUpon>CaseSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseRecords\ColdCaseForm.resx">
+      <DependentUpon>ColdCaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChiefInvestigator\ChiefInvestigatorDashboardForm.resx">
       <DependentUpon>ChiefInvestigatorDashboardForm.cs</DependentUpon>

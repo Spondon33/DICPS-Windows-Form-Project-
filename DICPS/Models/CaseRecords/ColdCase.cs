@@ -7,96 +7,137 @@ namespace DICPS.Models.CaseRecords
 {
     internal class ColdCase
     {
-        public static int CalculatePriority(
-            string status,
-            int currentPriority)
-        {
-            if (currentPriority > 0)
-            {
-                return currentPriority;
-            }
-
-            if (status == "Cold")
-            {
-                return 2;
-            }
-
-            if (status == "Reopened")
-            {
-                return 4;
-            }
-
-            return 2;
-        }
-
         public static bool ReopenColdCase(
             int caseId,
             DateTime dateReopened,
             string newLeadsSummary)
         {
-            SqlConnection conn = DatabaseManager.OpenConnection();
+            SqlConnection conn =
+                DatabaseManager.OpenConnection();
+
+            SqlTransaction transaction = null;
 
             try
             {
-                string checkQuery = @"SELECT COUNT(*)
+                string checkQuery = @"SELECT Status
                                       FROM [CASE]
-                                      WHERE CaseID = @CaseID
-                                      AND Status = 'Closed'";
+                                      WHERE CaseID = @CaseID";
 
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                checkCmd.Parameters.AddWithValue("@CaseID", caseId);
+                SqlCommand checkCmd =
+                    new SqlCommand(checkQuery, conn);
 
-                int count = (int)checkCmd.ExecuteScalar();
+                checkCmd.Parameters.AddWithValue(
+                    "@CaseID",
+                    caseId);
 
-                if (count == 0)
+                object result =
+                    checkCmd.ExecuteScalar();
+
+                if (result == null)
                 {
                     return false;
                 }
 
-                SqlTransaction transaction = conn.BeginTransaction();
+                string status =
+                    result.ToString();
 
-                try
+                if (status != "Closed")
                 {
-                    string updateCaseQuery = @"UPDATE [CASE]
-                                               SET Status = 'Reopened'
-                                               WHERE CaseID = @CaseID";
-
-                    SqlCommand updateCmd =
-                        new SqlCommand(updateCaseQuery, conn, transaction);
-
-                    updateCmd.Parameters.AddWithValue("@CaseID", caseId);
-                    updateCmd.ExecuteNonQuery();
-
-                    string insertQuery = @"SET IDENTITY_INSERT COLD_CASE ON;
-
-                                           INSERT INTO COLD_CASE
-                                           (CaseID, DateReopened, NewLeadsSummary)
-                                           VALUES
-                                           (@CaseID, @DateReopened, @NewLeadsSummary);
-
-                                           SET IDENTITY_INSERT COLD_CASE OFF;";
-
-                    SqlCommand insertCmd =
-                        new SqlCommand(insertQuery, conn, transaction);
-
-                    insertCmd.Parameters.AddWithValue("@CaseID", caseId);
-                    insertCmd.Parameters.AddWithValue("@DateReopened", dateReopened);
-                    insertCmd.Parameters.AddWithValue("@NewLeadsSummary", newLeadsSummary);
-
-                    insertCmd.ExecuteNonQuery();
-
-                    transaction.Commit();
-
-                    return true;
-                }
-                catch
-                {
-                    transaction.Rollback();
                     return false;
                 }
+
+                transaction =
+                    conn.BeginTransaction();
+
+                string updateCaseQuery = @"UPDATE [CASE]
+                                           SET Status = 'Cold',
+                                               Priority = 2
+                                           WHERE CaseID = @CaseID";
+
+                SqlCommand updateCaseCmd =
+                    new SqlCommand(
+                        updateCaseQuery,
+                        conn,
+                        transaction);
+
+                updateCaseCmd.Parameters.AddWithValue(
+                    "@CaseID",
+                    caseId);
+
+                updateCaseCmd.ExecuteNonQuery();
+
+                string identityInsertOnQuery =
+                    "SET IDENTITY_INSERT COLD_CASE ON";
+
+                SqlCommand identityInsertOnCmd =
+                    new SqlCommand(
+                        identityInsertOnQuery,
+                        conn,
+                        transaction);
+
+                identityInsertOnCmd.ExecuteNonQuery();
+
+                string insertQuery = @"INSERT INTO COLD_CASE
+                                       (
+                                           CaseID,
+                                           DateReopened,
+                                           NewLeadsSummary
+                                       )
+                                       VALUES
+                                       (
+                                           @CaseID,
+                                           @DateReopened,
+                                           @NewLeadsSummary
+                                       )";
+
+                SqlCommand insertCmd =
+                    new SqlCommand(
+                        insertQuery,
+                        conn,
+                        transaction);
+
+                insertCmd.Parameters.AddWithValue(
+                    "@CaseID",
+                    caseId);
+
+                insertCmd.Parameters.AddWithValue(
+                    "@DateReopened",
+                    dateReopened);
+
+                insertCmd.Parameters.AddWithValue(
+                    "@NewLeadsSummary",
+                    newLeadsSummary);
+
+                insertCmd.ExecuteNonQuery();
+
+                string identityInsertOffQuery =
+                    "SET IDENTITY_INSERT COLD_CASE OFF";
+
+                SqlCommand identityInsertOffCmd =
+                    new SqlCommand(
+                        identityInsertOffQuery,
+                        conn,
+                        transaction);
+
+                identityInsertOffCmd.ExecuteNonQuery();
+
+                transaction.Commit();
+
+                return true;
             }
             catch
             {
+                try
+                {
+                    if (transaction != null)
+                    {
+                        transaction.Rollback();
+                    }
+                }
+                catch
+                {
+                }
+
                 return false;
             }
             finally
@@ -107,29 +148,29 @@ namespace DICPS.Models.CaseRecords
 
         public static DataTable GetColdCases()
         {
-            SqlConnection conn = DatabaseManager.OpenConnection();
+            SqlConnection conn =
+                DatabaseManager.OpenConnection();
 
             try
             {
-                string query = @"SELECT C.CaseID,
-                                        C.CaseNumber,
-                                        C.CaseType,
-                                        C.Location,
-                                        C.Status,
-                                        C.Priority,
-                                        C.DateOpened,
-                                        CC.DateReopened,
-                                        CC.NewLeadsSummary
-                                 FROM [CASE] C
-                                 INNER JOIN COLD_CASE CC
-                                     ON C.CaseID = CC.CaseID
-                                 WHERE C.Status IN ('Cold', 'Reopened')
-                                 ORDER BY C.DateOpened DESC";
+                string query = @"SELECT
+                                    CaseID,
+                                    DateReopened,
+                                    NewLeadsSummary
+                                 FROM COLD_CASE
+                                 ORDER BY DateReopened DESC";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd =
+                    new SqlCommand(
+                        query,
+                        conn);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
+                SqlDataAdapter adapter =
+                    new SqlDataAdapter(cmd);
+
+                DataTable table =
+                    new DataTable();
+
                 adapter.Fill(table);
 
                 return table;

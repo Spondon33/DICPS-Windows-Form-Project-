@@ -55,6 +55,52 @@ namespace DICPS.Models.CaseRecords
             }
         }
 
+        public static bool UpdateCaseFile(
+            int caseId,
+            int detectiveId,
+            string caseNumber,
+            string caseType,
+            string location,
+            string status,
+            int priority)
+        {
+            SqlConnection conn = DatabaseManager.OpenConnection();
+
+            try
+            {
+                string query = @"UPDATE [CASE]
+                                 SET DetectiveID = @DetectiveID,
+                                     CaseNumber = @CaseNumber,
+                                     CaseType = @CaseType,
+                                     Location = @Location,
+                                     Status = @Status,
+                                     Priority = @Priority
+                                 WHERE CaseID = @CaseID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@CaseID", caseId);
+                cmd.Parameters.AddWithValue("@DetectiveID", detectiveId);
+                cmd.Parameters.AddWithValue("@CaseNumber", caseNumber);
+                cmd.Parameters.AddWithValue("@CaseType", caseType);
+                cmd.Parameters.AddWithValue("@Location", location);
+                cmd.Parameters.AddWithValue("@Status", status);
+                cmd.Parameters.AddWithValue("@Priority", priority);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                DatabaseManager.CloseConnection(conn);
+            }
+        }
+
         public static bool UpdateCaseStatus(int caseId, string status)
         {
             SqlConnection conn = DatabaseManager.OpenConnection();
@@ -89,19 +135,11 @@ namespace DICPS.Models.CaseRecords
             return UpdateCaseStatus(caseId, "Closed");
         }
 
-        public static int CalculatePriority(
-            string caseType,
-            string status,
-            int currentPriority)
+        public static int CalculatePriority(string status)
         {
-            if (currentPriority > 0)
+            if (status == "Open")
             {
-                return currentPriority;
-            }
-
-            if (caseType == "Criminal")
-            {
-                return 5;
+                return 3;
             }
 
             if (status == "Cold")
@@ -109,7 +147,12 @@ namespace DICPS.Models.CaseRecords
                 return 2;
             }
 
-            return 3;
+            if (status == "Closed")
+            {
+                return 1;
+            }
+
+            return 1;
         }
 
         public static int GetCaseCount()
@@ -119,11 +162,13 @@ namespace DICPS.Models.CaseRecords
             try
             {
                 string query = @"SELECT COUNT(*)
-                                 FROM [CASE]";
+                         FROM [CASE]";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd =
+                    new SqlCommand(query, conn);
 
-                return (int)cmd.ExecuteScalar();
+                return Convert.ToInt32(
+                    cmd.ExecuteScalar());
             }
             catch
             {
@@ -142,12 +187,14 @@ namespace DICPS.Models.CaseRecords
             try
             {
                 string query = @"SELECT COUNT(*)
-                                 FROM [CASE]
-                                 WHERE Status = 'Open'";
+                         FROM [CASE]
+                         WHERE Status = 'Open'";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd =
+                    new SqlCommand(query, conn);
 
-                return (int)cmd.ExecuteScalar();
+                return Convert.ToInt32(
+                    cmd.ExecuteScalar());
             }
             catch
             {
@@ -166,12 +213,14 @@ namespace DICPS.Models.CaseRecords
             try
             {
                 string query = @"SELECT COUNT(*)
-                                 FROM [CASE]
-                                 WHERE Status = 'Closed'";
+                         FROM [CASE]
+                         WHERE Status = 'Closed'";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd =
+                    new SqlCommand(query, conn);
 
-                return (int)cmd.ExecuteScalar();
+                return Convert.ToInt32(
+                    cmd.ExecuteScalar());
             }
             catch
             {
@@ -190,11 +239,13 @@ namespace DICPS.Models.CaseRecords
             try
             {
                 string query = @"SELECT COUNT(*)
-                                 FROM COLD_CASE";
+                         FROM [COLD_CASE]";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd =
+                    new SqlCommand(query, conn);
 
-                return (int)cmd.ExecuteScalar();
+                return Convert.ToInt32(
+                    cmd.ExecuteScalar());
             }
             catch
             {
@@ -360,50 +411,81 @@ namespace DICPS.Models.CaseRecords
 
             try
             {
-                string checkQuery = @"SELECT COUNT(*)
-                                      FROM EVIDENCE
-                                      WHERE CaseID = @CaseID";
+                string evidenceQuery = @"SELECT COUNT(*)
+                                         FROM EVIDENCE
+                                         WHERE CaseID = @CaseID";
 
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                checkCmd.Parameters.AddWithValue("@CaseID", caseId);
+                SqlCommand evidenceCmd =
+                    new SqlCommand(evidenceQuery, conn);
 
-                int evidenceCount = (int)checkCmd.ExecuteScalar();
+                evidenceCmd.Parameters.AddWithValue(
+                    "@CaseID", caseId);
+
+                int evidenceCount =
+                    Convert.ToInt32(evidenceCmd.ExecuteScalar());
 
                 if (evidenceCount > 0)
                 {
                     return false;
                 }
 
-                string suspectLinkQuery = @"DELETE FROM CASE_SUSPECT_LINK
-                                            WHERE CaseID = @CaseID";
+                string suspectLinkQuery =
+                    @"SELECT COUNT(*)
+                      FROM CASE_SUSPECT_LINK
+                      WHERE CaseID = @CaseID";
 
                 SqlCommand suspectLinkCmd =
                     new SqlCommand(suspectLinkQuery, conn);
 
-                suspectLinkCmd.Parameters.AddWithValue("@CaseID", caseId);
-                suspectLinkCmd.ExecuteNonQuery();
+                suspectLinkCmd.Parameters.AddWithValue(
+                    "@CaseID", caseId);
 
-                string witnessLinkQuery = @"DELETE FROM WITNESS_CASE_LINK
-                                            WHERE CaseID = @CaseID";
+                int suspectLinkCount =
+                    Convert.ToInt32(suspectLinkCmd.ExecuteScalar());
+
+                if (suspectLinkCount > 0)
+                {
+                    return false;
+                }
+
+                string witnessLinkQuery =
+                    @"SELECT COUNT(*)
+                      FROM WITNESS_CASE_LINK
+                      WHERE CaseID = @CaseID";
 
                 SqlCommand witnessLinkCmd =
                     new SqlCommand(witnessLinkQuery, conn);
 
-                witnessLinkCmd.Parameters.AddWithValue("@CaseID", caseId);
-                witnessLinkCmd.ExecuteNonQuery();
+                witnessLinkCmd.Parameters.AddWithValue(
+                    "@CaseID", caseId);
+
+                int witnessLinkCount =
+                    Convert.ToInt32(witnessLinkCmd.ExecuteScalar());
+
+                if (witnessLinkCount > 0)
+                {
+                    return false;
+                }
 
                 string noteQuery = @"DELETE FROM CASE_NOTE
                                      WHERE CaseID = @CaseID";
 
-                SqlCommand noteCmd = new SqlCommand(noteQuery, conn);
-                noteCmd.Parameters.AddWithValue("@CaseID", caseId);
+                SqlCommand noteCmd =
+                    new SqlCommand(noteQuery, conn);
+
+                noteCmd.Parameters.AddWithValue(
+                    "@CaseID", caseId);
+
                 noteCmd.ExecuteNonQuery();
 
                 string caseQuery = @"DELETE FROM [CASE]
                                      WHERE CaseID = @CaseID";
 
-                SqlCommand caseCmd = new SqlCommand(caseQuery, conn);
-                caseCmd.Parameters.AddWithValue("@CaseID", caseId);
+                SqlCommand caseCmd =
+                    new SqlCommand(caseQuery, conn);
+
+                caseCmd.Parameters.AddWithValue(
+                    "@CaseID", caseId);
 
                 caseCmd.ExecuteNonQuery();
 
