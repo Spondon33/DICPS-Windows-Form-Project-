@@ -61,7 +61,7 @@ namespace DICPS.Forms.Shared
                         detectiveDashboard.Show();
                         break;
                     case "Case Record Officer":
-                        CaseRecordsDashboardForm caseRecordsDashboard = new CaseRecordsDashboardForm();
+                        CaseRecordsDashboardForm caseRecordsDashboard = new CaseRecordsDashboardForm(currentUser);
                         caseRecordsDashboard.Show();
                         break;
                     case "Forensic Officer":
