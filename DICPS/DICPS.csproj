@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DatabaseManager.cs" />
-    <Compile Include="Common\Enums.cs" />
     <Compile Include="Common\StaffUser.cs" />
     <Compile Include="Forms\CaseRecords\CaseFileForm.cs">
       <SubType>Form</SubType>
